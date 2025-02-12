@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .company-story-section {
+            min-height: 500px;
+            /* Adjust the height as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - Ikechi Global Services</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <style>
+        ul {
+            padding-left: 50px;
+        }
+    </style>
+
+    <body>
+        <header class="site-header">
+            <div class="container">
+                <h1 class="logo">Ikechi Global Services</h1>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>               </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="about-us-section">
+                <div class="container">
+                    <div class="about-us-image" style="height: 30rem; overflow: hidden; position: relative;">
+                        <img src="https://hensteelengineering.com/demos/Slide/parallax_01.jpg" alt="About Us"
+                            style="width:100%;height: auto; position: absolute; top: 0;">
+                    </div>
+                    <script>
+                        document.addEventListener('scroll', function () {
+                            const image = document.querySelector('.about-us-image img');
+                            const scrollPosition = window.scrollY;
+                            const imageHeight = image.clientHeight;
+                            const containerHeight = image.parentElement.clientHeight;
+                            const maxScroll = imageHeight - containerHeight;
+                            const scrollAmount = Math.min(scrollPosition, maxScroll);
+                            image.style.top = `-${scrollAmount}px`;
+                        });
+                    </script>
+
+                    <div class="row">
+                        <div class="col-lg-7 m-auto text-center">
+
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="about-us-content m-auto text-center">
+                                <h1>Services</h1>
+                                <p>I'm a paragraph. Click here to add your own
+                                    text and edit me. It's easy. Just click
+                                    "Edit Text" or double click me to add your
+                                    own content and make changes to the
+                                    font.</p>
+                                <div class="about-us-buttons">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="company-story-section bg-white p-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2>Production Operations</h2>
+                            <p>Our team is dedicated to ensuring the highest standards of efficiency and safety in all
+                                aspects of production operations. We provide comprehensive services that include:</p>
+                            <ul>
+                                <li>Flow Station and Well-Head Operations</li>
+                                <li>Inspection and Repairs</li>
+                                <li>Pressure Testing</li>
+                                <li>Pipeline Cleaning and Pigging</li>
+                                <li>Oil Spill Control</li>
+                                <li>Containment and Clean-Up</li>
+                                <li>Pipeline Leak Repairs</li>
+                                <li>Well-Head Upgrades</li>
+                                <li>Wire Line Services.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 align-items-stretch">
+                            <img src="https://ghinternational.ng/images/services/img_pipeline_construction.png" alt=""
+                                class="img-fluid" style="object-fit: cover; height:400px;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="company-story-section p-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 d-flex align-items-stretch">
+                            <img src="https://ghinternational.ng/images/services/img_engineering_construction.jpg"
+                                alt="" class="img-fluid" style="object-fit: cover;height: 400px;">
+                        </div>
+                        <div class="col-lg-8">
+                            <h2>Engineering & Construction Services</h2>
+                            <p>G&H delivers a truly unique and unmatched portfolio of pipeline services, setting the standard for excellence in the Oil & Gas Industry.  Clients rely on us because our comprehensive suite of services is expertly executed and unparalleled in its quality and effectiveness. Our services include:</p>
+                            <ul>
+                                <li>Pipeline and Flow Line Construction and Repairs</li>
+                                <li>Mechanical Design and Construction</li>
+                                <li>Cathodic Protection</li>
+                                <li>Civil Fesign and Construction of Production Facilities</li>
+                                <li>Instrumentation and Electrical work activities</li>
+                            </ul>
+
+                        </div>
+                    </div>
+            </section>
+
+            <section class="company-story-section bg-white p-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2>Consultancy Services</h2>
+                            <p>We help organizations to improve their performance, operating primarily through the
+                                analysis of existing organizational problems and the development of plans for
+                                improvement. This includes providing expert advice and solutions tailored to the
+                                specific needs of each client. Our consultancy services cover a wide range of areas,
+                                ensuring that we can address various challenges and opportunities that businesses may
+                                face. Our team of experienced professionals is dedicated to delivering high-quality
+                                services that drive growth and success for our clients. This includes:</p>
+                            <ul>
+                                <li>Project Management</li>
+                                <li>Corrosion Control and Prevention</li>
+                                <li>Well Studies</li>
+                                <li>Petroleum Engineering</li>
+                                <li>Environmental Management</li>
+                                <li>Quality & Safety</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 align-items-stretch">
+                            <img src="https://ghinternational.ng/images/services/img_consulting.jpg" alt=""
+                                class="img-fluid" style="object-fit: cover; height:400px;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="company-story-section p-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 d-flex align-items-stretch">
+                            <img src="https://ghinternational.ng/images/services/img_engineering_construction.jpg"
+                                alt="" class="img-fluid" style="object-fit: cover;height: 400px;">
+                        </div>
+                        <div class="col-lg-8">
+                            <h2>Manpower Supply & Support</h2>
+                            <p>We provide a comprehensive range of manpower supply and support services to meet the
+                                diverse needs of our clients. Our services include:</p>
+                            <ul>
+                                <li>Supply of skilled operators for various production and maintenance activities.</li>
+                                <li>Provision of experienced personnel for wire line maintenance and operations.</li>
+                                <li>Deployment of supervisors for overseeing production and project activities.</li>
+                                <li>Support for associated project and operations activities to ensure smooth execution.
+                                </li>
+                            </ul>
+                            <p>Our team is dedicated to delivering high-quality services that enhance operational
+                                efficiency and productivity. We ensure that our personnel are well-trained and equipped
+                                to handle the specific requirements of each project.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="company-story-section bg-white p-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2>Maintenance Services</h2>
+                            <p>We offer comprehensive maintenance services to ensure the smooth operation and longevity of your equipment and facilities. Our services include:</p>
+                            <ul>
+                                <li>Pre-planned Preventive Maintenance: Regularly scheduled maintenance to prevent equipment failures and extend the lifespan of your assets.</li>
+                                <li>Breakdown Maintenance: Prompt and efficient repair services to minimize downtime and restore functionality quickly.</li>
+                                <li>Facilities Maintenance: Comprehensive upkeep of buildings, ensuring they remain safe, functional, and aesthetically pleasing.</li>
+                                <li>Electrical Appliances Maintenance: Expert care and repair of electrical appliances to ensure they operate efficiently and safely.</li>
+                                <li>Environment Cleaning: Thorough cleaning services to maintain a clean and healthy environment for your operations.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 align-items-stretch">
+                            <img src="https://ghinternational.ng/images/services/img_consulting.jpg" alt="" class="img-fluid" style="object-fit: cover; height:400px;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <footer class="footer-06">
+            <div class="container">
+                <div class="row align-items-center align-items-stretch mb-5">
+                    <div class="col-md-4 py-4 py-md-5 aside-stretch d-flex align-items-center">
+                        <div class="w-100">
+                            <span class="subheading">Subscribe to our</span>
+                            <h3 class="heading-section">Newsletter</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-8 py-4 py-md-5 d-flex align-items-center pl-md-5 aside-stretch-right">
+                        <form action="#" class="subscribe-form w-100">
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control rounded-left" placeholder="Enter email address">
+                                <button type="submit" class="form-control submit"><span>Submit</span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-3 col-lg-4 order-md-last">
+                        <div class="row justify-content-end">
+                            <div class="col-md-12 col-lg-9 text-md-right mb-md-0 mb-4">
+                                <h2 class="footer-heading"><a href="#" class="logo">Ikechi Global</a></h2>
+                                p.text
+                                <p class="copyright">
+                                    Copyright
+                                    &copy;
+                                    <script>document.write(new Date().getFullYear());</script>
+                                    All rights reserved | This template is made
+                                    with <i class="ion-ios-heart" aria-hidden="true"></i> by <a
+                                        href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-lg-8">
+                        <div class="row">
+                            <div class="col-md-4 mb-md-0 mb-4">
+                                <h2 class="footer-heading">Services</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="py-1 d-block"><span
+                                                class="ion-ios-checkmark-circle-outline mr-2"></span>Our
+                                            Company</a></li>
+                                    <li><a href="#" class="py-1 d-block"><span
+                                                class="ion-ios-checkmark-circle-outline mr-2"></span>Data</a></li>
+                                    <li><a href="#" class="py-1 d-block"><span
+                                                class="ion-ios-checkmark-circle-outline mr-2"></span>Pricing</a></li>
+                                    <li><a href="#" class="py-1 d-block"><span
+                                                class="ion-ios-checkmark-circle-outline mr-2"></span>Contact
+                                            Us</a></li>
+                                    <li><a href="#" class="py-1 d-block"><span
+                                                class="ion-ios-checkmark-circle-outline mr-2"></span>Support</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 mb-md-0 mb-4">
+                                <h2 class="footer-heading">Projects</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="py-1 d-block"><span
+                                                class="ion-ios-checkmark-circle-outline mr-2"></span>Download</a></li>
+                                    <li><a href="#" class="py-1 d-block"><span
+                                                class="ion-ios-checkmark-circle-outline mr-2"></span>Bike
+                                            Provider</a></li>
+                                    <li><a href="#" class="py-1 d-block"><span
+                                                class="ion-ios-checkmark-circle-outline mr-2"></span>How
+                                            to Use</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 mb-md-0 mb-4">
+                                <h2 class="footer-heading">Contact Us</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="py-1 d-block"><span class="ion-ios-location mr-2"></span><i
+                                                class="fas fa-map"></i> 123 Main
+                                            Street, Anytown, USA</a></li>
+                                    <li><a href="#" class="py-1 d-block"><span class="ion-ios-call mr-2"></span><i
+                                                class="fas fa-phone"></i>(123)
+                                            456-7890</a></li>
+                                    <li><a href="#" class="py-1 d-block"><span class="ion-ios-mail mr-2"></span><i
+                                                class="fas fa-envelope"></i>info@ikechiglobal.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    </body>
+
+    </html>
+</body>
+
+</html>
