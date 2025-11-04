@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ikechi Global Services Limited| Our Services</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <!-- Owl Carousel -->
-    <!-- Owl Carousel CSS -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
@@ -21,13 +20,12 @@
 <style>
     body {
         background: url(3.webp);
-        background-size: contain;
+        /* Consider 'cover' if you don't want the image to repeat */
+        background-size: contain; 
     }
 </style>
 
 <body>
-    <!-- Header -->
-    <!-- Header -->
     <header id="main-header">
         <div class="logo">
             <i class="fas fa-drafting-compass logo-icon"></i>
@@ -51,7 +49,6 @@
         </div>
     </header>
 
-    <!-- Modal Header for Mobile -->
     <div class="modal-header">
         <button class="close-btn">&times;</button>
         <div class="modal-logo">
@@ -76,6 +73,7 @@
     </div>
     <div class="overlay"></div>
     <style>
+        /* Note: It's best practice to move all <style> blocks into your styles.css file */
         .hero-section {
             background-color: #102149;
             color: white;
@@ -271,7 +269,6 @@
     </style>
 
 
-    <!-- Hero Section -->
     <section class="hero-section">
         <br><br><br>
 
@@ -298,8 +295,7 @@
                 <p class="mb-5">We are a leading provider of security, leasing, marine logistics, engineering and
                     procurement services. Our mission is to deliver reliable, compliant and cost-effective solutions
                     that meet the needs of our clients.</p>
-                <!-- <a href="#" class="btn btn-primary btn-lg">Learn More</a> -->
-            </div>
+                </div>
             <div class="col-lg-8">
                 <div class="row g-4">
                     <div class="col-lg-6 fade-in-section delay-1">
@@ -347,24 +343,25 @@
         </div>
         </div>
     </section>
-    <section class="m-4">
+
+        <section class="m-4">
         <div class="row">
-        <div class="col-md-9 col-sm-12 fade-in-left"
-            style="background: url(security.webp); background-size: cover; background-position: center; min-height: 400px;">
-        </div>
-        <div class="content-right p-2 p-md-4 p-lg-5 col-12 col-md-10 col-lg-8">
-            <h2 class="mb-4">Security Services</h2>
-            <p class="">Comprehensive security solutions to protect your assets and personnel</p>
-            <div class="feature-list">
-                <li><i class="bi bi-shield"></i> Armed and Unarmed Security Guards</li>
-                <li><i class="bi bi-camera-video"></i> Surveillance Systems</li>
-                <li><i class="bi bi-shield-check"></i> Risk Assessment & Management</li>
-                <li><i class="bi bi-person-badge"></i> Security Personnel Training</li>
-                <li><i class="bi bi-building-lock"></i> Facility Security Management</li>
+            <div class="col-md-9 col-sm-12 fade-in-left"
+                style="background: url(./images/security-2.jpg); background-size: cover; background-position: center; min-height: 400px;">
+                <div class="content-right p-2 p-md-4 p-lg-5 col-12 col-md-10 col-lg-8">
+                <h2 class="mb-4">Security Services</h2>
+                <p class="">Comprehensive security solutions to protect your assets and personnel</p>
+                
+                <ul class="feature-list">
+                    <li><i class="bi bi-shield"></i> Armed and Unarmed Security Guards</li>
+                    <li><i class="bi bi-camera-video"></i> Surveillance Systems</li>
+                    <li><i class="bi bi-shield-check"></i> Risk Assessment & Management</li>
+                    <li><i class="bi bi-person-badge"></i> Security Personnel Training</li>
+                    <li><i class="bi bi-building-lock"></i> Facility Security Management</li>
+                </ul>
+                </div>
             </div>
-        </div>
-        </div>
-        <div class="col-md-3 col-sm-0"></div>
+            <div class="col-md-3 col-sm-0"></div>
         </div>
     </section>
 
@@ -372,17 +369,18 @@
         <div class="row">
             <div class="col-md-3 col-sm-0"></div>
             <div class="col-md-9 col-sm-12 fade-in-right"
-                style="background: url(leasing.webp); background-size: cover; background-position: center; min-height: 400px;">
+                style="background: url(./images/leasing.jpg); background-size: cover; background-position: center; min-height: 400px;">
                 <div class="content-left p-2 p-md-4 p-lg-5 col-12 col-md-10 col-lg-8">
                     <h2 class="mb-4">Leasing Services</h2>
                     <p class="">Flexible equipment leasing solutions for your operational needs</p>
-                    <div class="feature-list">
+                    
+                    <ul class="feature-list">
                         <li><i class="bi bi-truck"></i> Heavy Equipment Leasing</li>
                         <li><i class="bi bi-tools"></i> Construction Equipment Rental</li>
                         <li><i class="bi bi-gear-wide"></i> Industrial Machinery Leasing</li>
                         <li><i class="bi bi-calendar-check"></i> Short and Long-term Lease Options</li>
                         <li><i class="bi bi-wrench"></i> Equipment Maintenance Services</li>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -390,21 +388,22 @@
 
     <section class="m-4">
         <div class="row">
-        <div class="col-md-9 col-sm-12 fade-in-left"
-            style="background: url(marine.webp); background-size: cover; background-position: center; min-height: 400px;">
-            <div class="content-right p-2 p-md-4 p-lg-5 col-12 col-md-10 col-lg-8">
-                <h2 class="mb-4">Marine Equipment & Logistics</h2>
-                <p class="">Complete marine logistics solutions for offshore operations</p>
-                <div class="feature-list">
-                    <li><i class="bi bi-water"></i> Marine Equipment Supply</li>
-                    <li><i class="bi bi-ship"></i> Vessel Operations</li>
-                    <li><i class="bi bi-box-seam"></i> Offshore Logistics Support</li>
-                    <li><i class="bi bi-geo-alt"></i> Marine Transport Services</li>
-                    <li><i class="bi bi-clipboard-check"></i> Maritime Compliance Management</li>
+            <div class="col-md-9 col-sm-12 fade-in-left"
+                style="background: url(./images/marine-equipment-2.jpg); background-size: cover; background-position: center; min-height: 400px;">
+                <div class="content-right p-2 p-md-4 p-lg-5 col-12 col-md-10 col-lg-8">
+                    <h2 class="mb-4">Marine Equipment & Logistics</h2>
+                    <p class="">Complete marine logistics solutions for offshore operations</p>
+                    
+                    <ul class="feature-list">
+                        <li><i class="bi bi-water"></i> Marine Equipment Supply</li>
+                        <li><i class="bi bi-ship"></i> Vessel Operations</li>
+                        <li><i class="bi bi-box-seam"></i> Offshore Logistics Support</li>
+                        <li><i class="bi bi-geo-alt"></i> Marine Transport Services</li>
+                        <li><i class="bi bi-clipboard-check"></i> Maritime Compliance Management</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-0"></div>
+            <div class="col-md-3 col-sm-0"></div>
         </div>
     </section>
 
@@ -412,30 +411,30 @@
         <div class="row">
             <div class="col-md-3 col-sm-0"></div>
             <div class="col-md-9 col-sm-12 fade-in-right"
-                style="background: url(clearing.webp); background-size: cover; background-position: center; min-height: 400px;">
+                style="background: url(./images/clearing.jpg); background-size: cover; background-position: center; min-height: 400px;">
                 <div class="content-left p-2 p-md-4 p-lg-5 col-12 col-md-10 col-lg-8">
                     <h2 class="mb-4">Clearing & Forwarding</h2>
                     <p class="">Efficient customs clearance and freight forwarding services</p>
-                    <div class="feature-list">
+                    
+                    <ul class="feature-list">
                         <li><i class="bi bi-box"></i> Customs Clearance Services</li>
                         <li><i class="bi bi-truck"></i> Freight Forwarding</li>
                         <li><i class="bi bi-file-text"></i> Documentation Management</li>
                         <li><i class="bi bi-globe"></i> International Shipping</li>
                         <li><i class="bi bi-clipboard-data"></i> Import/Export Consulting</li>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <h3 class="text-white mb-4"><span class="text-primary">Construct</span>Pro</h3>
-                    <p>Leading the way in innovative construction and engineering solutions since 1995. We build
+                    <h3 class="text-white mb-4">Ikechi<span class="text-primary">Global</span></h3>
+                    <p>Leading the way in innovative security, leasing, marine, engineering and procurement solutions. We build
                         with
                         integrity, quality, and a commitment to excellence.</p>
                     <div class="mt-4">
@@ -459,21 +458,21 @@
                 <div class="col-lg-2 col-md-4">
                     <h4 class="text-white mb-4">Services</h4>
                     <ul class="list-unstyled footer-links">
-                        <li class="mb-2"><a href="#">Commercial Construction</a></li>
-                        <li class="mb-2"><a href="#">Residential Development</a></li>
-                        <li class="mb-2"><a href="#">Industrial Facilities</a></li>
-                        <li class="mb-2"><a href="#">Infrastructure</a></li>
-                        <li class="mb-2"><a href="#">Sustainable Construction</a></li>
-                        <li class="mb-2"><a href="#">Renovation</a></li>
+                        <li class="mb-2"><a href="#">Security Services</a></li>
+                        <li class="mb-2"><a href="#">Leasing & Manpower</a></li>
+                        <li class="mb-2"><a href="#">Marine Logistics</a></li>
+                        <li class="mb-2"><a href="#">Engineering</a></li>
+                        <li class="mb-2"><a href="#">Procurement</a></li>
+                        <li class="mb-2"><a href="#">Clearing & Forwarding</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-4" id="contact">
                     <h4 class="text-white mb-4">Contact Us</h4>
                     <ul class="list-unstyled footer-links">
-                        <li class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-warning"></i> 123 Construction Ave,
-                            Building City, BC 12345</li>
+                        <li class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-warning"></i> 123 Global Ave,
+                            Lagos, NG 12345</li>
                         <li class="mb-3"><i class="bi bi-telephone-fill me-2 text-warning"></i> (123) 456-7890</li>
-                        <li class="mb-3"><i class="bi bi-envelope-fill me-2 text-warning"></i> info@constructpro.com
+                        <li class="mb-3"><i class="bi bi-envelope-fill me-2 text-warning"></i> info@ikechiglobal.com
                         </li>
                         <li class="mb-3"><i class="bi bi-clock-fill me-2 text-warning"></i> Mon-Fri: 8:00 AM - 6:00
                             PM
@@ -484,29 +483,19 @@
             <hr class="mt-5 mb-4" style="border-color: rgba(255,255,255,0.1);">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2023 ConstructPro. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2025 Ikechi Global Services Limited. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed with <i class="bi bi-heart-fill text-danger"></i> by ConstructPro Team
+                     <p class="mb-0">Designed with <i class="bi bi-heart-fill text-danger"></i> by Ikechi Global
                     </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <!-- <a href="#" class="btn btn-primary btn-lg rounded-circle back-to-top"
-            style="position: fixed; bottom: 20px; right: 20px; display: none;">
-            <i class="bi bi-arrow-up"></i>
-        </a> -->
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- Custom JS -->
     <script src="./js/script.js"></script>
 </body>
 
