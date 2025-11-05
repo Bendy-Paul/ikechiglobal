@@ -24,6 +24,10 @@
             --gradient: linear-gradient(135deg, var(--primary), #0a58ca);
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
+
+        a{
+            text-decoration: none;
+        }
         }
 
         * {
@@ -678,6 +682,7 @@
     </div>
     <div class="overlay"></div>
 
+
     <div class="services-dropdown">
         <button class="dropdown-close">&times;</button>
         <div class="services-header">
@@ -685,36 +690,48 @@
             <p>Comprehensive solutions tailored to meet your business needs across multiple industries</p>
         </div>
         <div class="services-grid">
-            <div class="service-item">
-                <i class="fas fa-shield-alt service-icon"></i>
-                <h3>Security Services</h3>
-                <p>Professional security solutions including static guards, mobile patrols and site protection tailored to your operations.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-handshake service-icon"></i>
-                <h3>Leasing Services</h3>
-                <p>Flexible leasing solutions for equipment and manpower — short- or long-term arrangements to meet project demands.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-ship service-icon"></i>
-                <h3>Marine Equipment & Logistics</h3>
-                <p>Supply and logistics for marine operations including equipment hire, vessel support and offshore logistics coordination.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-cogs service-icon"></i>
-                <h3>Engineering Services</h3>
-                <p>Multidisciplinary engineering support — design, analysis, fabrication and commissioning across civil, mechanical and electrical disciplines.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-clipboard-list service-icon"></i>
-                <h3>Procurement & Consultancy</h3>
-                <p>End-to-end procurement services combined with expert consultancy to optimize cost, lead times and supplier performance.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-truck service-icon"></i>
-                <h3>Clearing & Forwarding</h3>
-                <p>Reliable clearing, forwarding and freight services to ensure smooth cross-border movement and on-time delivery of cargo.</p>
-            </div>
+            <a href="security-services.html" class="service-item-link">
+                <div class="service-item">
+                    <i class="fas fa-shield-alt service-icon"></i>
+                    <h3>Security Services</h3>
+                    <p>Professional security solutions including static guards, mobile patrols and site protection.</p>
+                </div>
+            </a>
+            <a href="leasing-services.html" class="service-item-link">
+                <div class="service-item">
+                    <i class="fas fa-handshake service-icon"></i>
+                    <h3>Leasing Services</h3>
+                    <p>Flexible leasing solutions for equipment and manpower.</p>
+                </div>
+            </a>
+            <a href="marine-logistics.html" class="service-item-link">
+                <div class="service-item">
+                    <i class="fas fa-ship service-icon"></i>
+                    <h3>Marine Equipment & Logistics</h3>
+                    <p>Supply and logistics for marine operations including equipment hire.</p>
+                </div>
+            </a>
+            <a href="engineering-services.html" class="service-item-link">
+                <div class="service-item">
+                    <i class="fas fa-cogs service-icon"></i>
+                    <h3>Engineering Services</h3>
+                    <p>Multidisciplinary engineering support — design, analysis and commissioning.</p>
+                </div>
+            </a>
+            <a href="procurement-consultancy.html" class="service-item-link">
+                <div class="service-item">
+                    <i class="fas fa-clipboard-list service-icon"></i>
+                    <h3>Procurement & Consultancy</h3>
+                    <p>End-to-end procurement and specialist consultancy services.</p>
+                </div>
+            </a>
+            <a href="clearing-forwarding.html" class="service-item-link">
+                <div class="service-item">
+                    <i class="fas fa-truck service-icon"></i>
+                    <h3>Clearing & Forwarding</h3>
+                    <p>Reliable clearing, forwarding and freight services for cross-border trade.</p>
+                </div>
+            </a>
         </div>
     </div>
 
