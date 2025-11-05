@@ -5,344 +5,787 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ikechi Global Services Limited | Home Page</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <!-- Owl Carousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    
+<style>
+    :root {
+        --primary: #f6b61b;
+        --secondary: #0d6efd;
+        --dark: #1e2a38;
+        --light: #f8f9fa;
+        --accent: #20c997;
+        --text-dark: #333;
+        --text-light: #6c757d;
+        --gradient: linear-gradient(135deg, var(--primary), #0a58ca);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
 
-    <style>
-        /* Stats counter animation */
-        .stats-number {
-            display: inline-block;
-            min-width: 80px;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #f6b61b;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        /* Header styles */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
+    body {
+        background-color: var(--light);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
 
-        header.scrolled {
-            padding: 10px 5%;
-            background: rgba(255, 255, 255, 0.98);
-        }
+    /* Prevent scrolling when modal is open */
+    body.modal-open {
+        overflow: hidden;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+        line-height: 1.2;
+    }
 
-        .logo-icon {
-            margin-right: 10px;
-            color: #f6b61b;
-        }
+    .section-padding {
+        padding: 80px 0;
+    }
 
-        .logo span {
-            color: #f6b61b;
-        }
+    .section-title {
+        position: relative;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
 
-        .nav-links ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 2px;
+    }
 
-        .nav-links li {
-            margin: 0 15px;
-        }
+    /* Modern Header Styles */
+    #main-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        padding: 15px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: var(--transition);
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-        }
+    #main-header.scrolled {
+        padding: 10px 5%;
+        background: rgba(255, 255, 255, 0.98);
+    }
 
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #f6b61b;
-            transition: width 0.3s ease;
-        }
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--dark);
+        z-index: 1001;
+        text-decoration: none;
+    }
 
-        .nav-links a:hover:after {
-            width: 100%;
+    .logo-icon {
+        margin-right: 10px;
+        color: var(--primary);
+    }
+
+    .logo span {
+        color: var(--primary);
+    }
+
+    .nav-links ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+        position: relative;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        position: relative;
+        padding: 8px 15px;
+        border-radius: 30px;
+        transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+        background: rgba(13, 110, 253, 0.05);
+    }
+
+    .nav-links a.active {
+        color: var(--primary);
+        background: rgba(13, 110, 253, 0.1);
+    }
+
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 3px 0;
+        background: var(--dark);
+        transition: var(--transition);
+        border-radius: 2px;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-nav-panel {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: white;
+        z-index: 2000;
+        padding: 80px 30px 30px;
+        transition: var(--transition);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+    }
+
+    .mobile-nav-panel.active {
+        right: 0;
+    }
+
+    .modal-logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 30px;
+    }
+
+    .modal-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .modal-nav li {
+        margin-bottom: 15px;
+    }
+
+    .modal-nav a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 500;
+        padding: 10px 15px;
+        border-radius: 30px;
+        display: block;
+        transition: var(--transition);
+    }
+
+    .modal-nav a:hover {
+        color: var(--primary);
+        background: rgba(13, 110, 253, 0.05);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--dark);
+        transition: var(--transition);
+    }
+
+    .close-btn:hover {
+        color: var(--primary);
+        transform: rotate(90deg);
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1999;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+    }
+
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Modern Hero Section */
+    .hero-section {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(135deg, rgba(30, 42, 56, 0.8), rgba(13, 110, 253, 0.7));
+    }
+
+    .hero-carousel .item {
+        position: relative;
+        height: 100vh;
+    }
+
+    .hero-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        width: 80%;
+        max-width: 900px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .btn-modern {
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: var(--transition);
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .btn-primary-modern {
+        background: var(--gradient);
+        color: white;
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+    }
+
+    .btn-primary-modern:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(13, 110, 253, 0.5);
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn-outline-modern {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+
+    .btn-outline-modern:hover {
+        background: white;
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    .btn-outline-primary-dark {
+        background: transparent;
+        color: var(--dark);
+        border: 2px solid var(--dark);
+    }
+    .btn-outline-primary-dark:hover {
+        background: var(--dark);
+        color: white;
+        text-decoration: none;
+    }
+
+    /* ** NEW SERVICES MODAL **
+    This CSS now styles the dropdown as a full-screen modal
+    for ALL screen sizes.
+    */
+    .services-dropdown {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        box-shadow: var(--shadow);
+        z-index: 2010; /* Higher than mobile nav */
+        padding: 3rem 2rem;
+        border-radius: 0;
+        overflow-y: auto;
+
+        /* Hide by default */
+        display: none;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .services-dropdown.active {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .service-item {
+        padding: 2rem;
+        border-radius: 15px;
+        background: white;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-item:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: var(--gradient);
+        transition: var(--transition);
+    }
+
+    .service-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-item:hover:before {
+        width: 100%;
+        opacity: 0.05;
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+        z-index: 1;
+    }
+
+    .service-item h3 {
+        color: var(--dark);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        z-index: 1;
+    }
+
+    .service-item p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        z-index: 1;
+    }
+
+    .dropdown-close {
+        /* Position fixed so it stays in view on scroll */
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-light);
+        transition: var(--transition);
+        z-index: 2011; /* Above the dropdown */
+    }
+
+    .dropdown-close:hover {
+        color: var(--primary);
+        transform: rotate(90deg);
+    }
+
+    .services-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 3rem; /* Add padding to account for fixed close btn */
+    }
+
+    .services-header h2 {
+        color: var(--dark);
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .services-header p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+    }
+    
+    /* End of New Services Modal Styles */
+
+
+    /* Modern Cards */
+    .modern-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        height: 100%;
+        position: relative;
+    }
+
+    .modern-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .modern-card-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .modern-card-body {
+        padding: 1.5rem;
+    }
+
+    .modern-card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: var(--dark);
+    }
+
+    .modern-card-text {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+    }
+
+    .modern-card-icon {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 50px;
+        height: 50px;
+        background: var(--gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+    }
+
+    /* Stats Section */
+    .stats-section {
+        background: var(--gradient);
+        color: white;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stats-section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="white"/></svg>');
+        background-size: cover;
+        opacity: 0.1;
+    }
+
+    .stats-item {
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .stats-number {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .stats-label {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    /* About Section */
+    .about-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about-img {
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+    }
+
+    .custom-checkmarks li {
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 20px;
+        list-style: none;
+    }
+
+    .custom-checkmarks li:before {
+        content: '\f00c';
+        font-family: 'Font Awesome 6 Free'; /* Use correct family name */
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--primary);
+        font-size: 1.2rem;
+    }
+
+    /* Client Section */
+    .client-section {
+        background: var(--light);
+    }
+
+    .client-logo {
+        height: 80px;
+        width: 150px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.6;
+        transition: var(--transition);
+        margin: 0 auto;
+    }
+
+    .client-logo:hover {
+        filter: grayscale(0);
+        opacity: 1;
+    }
+
+    /* Footer */
+    .footer {
+        background: var(--dark);
+        color: white;
+        padding: 80px 0 20px;
+    }
+
+    .footer h4 {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+    }
+
+    .footer h4:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--primary);
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+        padding-left: 5px;
+    }
+
+    .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: var(--transition);
+    }
+
+    .social-icon:hover {
+        background: var(--primary);
+        transform: translateY(-5px);
+    }
+
+    /* Animations */
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .nav-links {
+            display: none;
         }
 
         .hamburger {
-            display: none;
-            cursor: pointer;
+            display: flex;
         }
 
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            background: #333;
-            transition: all 0.3s ease;
+        .hero-content h1 {
+            font-size: 2.5rem;
         }
-
 
         .section-title {
-            position: relative;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            /* display: inline-block; */
-            text-align: center;
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 2rem;
         }
 
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: calc(50% - px);
-            width: 90px;
-            height: 4px;
-            background: #f6b61b;
+        .hero-content p {
+            font-size: 1rem;
         }
 
-        .text-center .section-title:after {
-            left: 50%;
-            transform: translateX(-50%);
+        .services-grid {
+            grid-template-columns: 1fr;
         }
 
-        /* Service cards */
-        .service-card {
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .btn-modern {
+            padding: 10px 20px;
+            font-size: 0.9rem;
         }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        
+        .mobile-nav-panel {
+            width: 280px;
         }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: #f6b61b;
+        
+        .section-padding {
+            padding: 60px 0;
         }
+    }
 
-        .w-w-d-img {
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
+    @media (max-width: 576px) {
+        .hero-content {
+            width: 90%;
         }
-
-        /* Stats section */
-        .stats-item {
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        
+        .hero-content h1 {
+            font-size: 1.8rem;
         }
-
-        .stats-label {
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        /* About section */
-        .custom-checkmarks li {
-            position: relative;
-            padding-left: 35px;
-            margin-bottom: 20px;
-            list-style: none;
-        }
-
-        .custom-checkmarks li:before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #f6b61b;
-            font-size: 1.2rem;
-        }
-
-        /* Projects section */
-        .projects .service-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Services section */
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            height: 300px;
-            margin-bottom: 30px;
-        }
-
-        .project-img {
+        
+        .mobile-nav-panel {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
         }
-
-        .project-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .project-overlay {
-            transform: translateY(0);
-        }
-
-        .project-card:hover .project-img {
-            transform: scale(1.1);
-        }
-
-        /* Footer */
-        .footer {
-            background: #222;
-            color: #fff;
-            padding: 70px 0 20px;
-        }
-
-        .footer h4 {
-            position: relative;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-
-        .footer h4:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: #f6b61b;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #f6b61b;
-        }
-
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background: #f6b61b;
-            transform: translateY(-5px);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .hero-content {
-                left: 5%;
-                right: 5%;
-                text-align: center;
-            }
-
-            .hero-title-container:after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .d-flex.gap-3 {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
-    <!-- Header -->
+    
     <header id="main-header">
-        <div class="logo">
+        <a href="index.html" class="logo">
             <i class="fas fa-drafting-compass logo-icon"></i>
             <div class="logo-text">Ikechi<span>Global</span></div>
-        </div>
+        </a>
 
         <nav class="nav-links">
             <ul>
-                <li><a href="index-clone.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact-us.html">Contact</a></li>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li>
+                    <a href="#" class="services-link"><i class="fas fa-cogs"></i> Services</a>
+                </li>
+                <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="contact-us.html"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
 
@@ -353,8 +796,8 @@
         </div>
     </header>
 
-    <!-- Modal Header for Mobile -->
-    <div class="modal-header">
+    
+    <div class="mobile-nav-panel">
         <button class="close-btn">&times;</button>
         <div class="modal-logo">
             <i class="fas fa-drafting-compass logo-icon"></i>
@@ -363,150 +806,125 @@
 
         <nav class="modal-nav">
             <ul>
-                <li><a href="index-clone.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact-us.html">Contact</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li>
+                    <a href="#" class="services-link-mobile"><i class="fas fa-cogs"></i> Services</a>
+                </li>
+                <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="contact-us.html"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
 
         <div class="nav-buttons" style="margin-top: 30px;">
-            <button class="btn btn-primary" style="width: 100%;">Get Quote</button>
-            <button class="btn btn-secondary" style="width: 100%; margin-top: 15px;">Login</button>
+            <button class="btn btn-primary w-100">Get Quote</button>
+            <button class="btn btn-secondary w-100 mt-3">Login</button>
         </div>
     </div>
     <div class="overlay"></div>
 
-    <br><br><br>
-    <!-- Hero Slider -->
+    <div class="services-dropdown">
+        <button class="dropdown-close">&times;</button>
+        <div class="services-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive solutions tailored to meet your business needs across multiple industries</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-item">
+                <i class="fas fa-shield-alt service-icon"></i>
+                <h3>Security Services</h3>
+                <p>Professional security solutions including static guards, mobile patrols and site protection tailored to your operations.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-handshake service-icon"></i>
+                <h3>Leasing Services</h3>
+                <p>Flexible leasing solutions for equipment and manpower — short- or long-term arrangements to meet project demands.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-ship service-icon"></i>
+                <h3>Marine Equipment & Logistics</h3>
+                <p>Supply and logistics for marine operations including equipment hire, vessel support and offshore logistics coordination.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-cogs service-icon"></i>
+                <h3>Engineering Services</h3>
+                <p>Multidisciplinary engineering support — design, analysis, fabrication and commissioning across civil, mechanical and electrical disciplines.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-clipboard-list service-icon"></i>
+                <h3>Procurement & Consultancy</h3>
+                <p>End-to-end procurement services combined with expert consultancy to optimize cost, lead times and supplier performance.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-truck service-icon"></i>
+                <h3>Clearing & Forwarding</h3>
+                <p>Reliable clearing, forwarding and freight services to ensure smooth cross-border movement and on-time delivery of cargo.</p>
+            </div>
+        </div>
+    </div>
+
     <section class="hero-section">
         <div class="owl-carousel owl-theme hero-carousel">
             <div class="item">
-                <img src="./images/hero/background1.jpg" alt="Modern Building" class="hero-bg">
+                <img src="./images/leasing.jpg" alt="Security and Logistics" class="hero-bg">
                 <div class="hero-content">
-                    <div class="hero-title-container">
-                        <h1 class="display-3 fw-bold mb-2">Security, Leasing & Logistics</h1>
-                    </div>
+                    <h1 class="display-3 fw-bold mb-2">Security, Leasing & Logistics</h1>
                     <p class="lead mb-2">Professional Security Services, Leasing solutions, Marine Equipment & Logistics, and Engineering expertise to support your operations.</p>
-                    <div class="d-flex gap-3">
-                        <a href="services.html" class="btn btn-primary btn-lg rounded-pill px-4">Our Services</a>
-                        <a href="contact-us.html" class="btn btn-outline-light btn-lg rounded-pill px-4">Contact Us</a>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="services.html" class="btn-modern btn-primary-modern">Our Services</a>
+                        <a href="contact-us.html" class="btn-modern btn-outline-modern">Contact Us</a>
                     </div>
                 </div>
             </div>
             <div class="item">
-                <img src="./images/hero/background2.webp" alt="Construction Site" class="hero-bg">
+                <img src="./images/engineering-service.jpg" alt="Engineering Site" class="hero-bg">
                 <div class="hero-content">
-                    <div class="hero-title-container">
-                        <h1 class="display-3 fw-bold mb-2">Engineering & Procurement</h1>
-                    </div>
+                    <h1 class="display-3 fw-bold mb-2">Engineering & Procurement</h1>
                     <p class="lead mb-2">We combine engineering precision with procurement and consultancy to deliver end-to-end solutions.</p>
-                    <div class="d-flex gap-3">
-                        <a href="about.html" class="btn btn-primary btn-lg rounded-pill px-4">About Us</a>
-                        <a href="projects.html" class="btn btn-outline-light btn-lg rounded-pill px-4">Our Projects</a>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="about.html" class="btn-modern btn-primary-modern">About Us</a>
+                        <a href="projects.html" class="btn-modern btn-outline-modern">Our Projects</a>
                     </div>
                 </div>
             </div>
             <div class="item">
-                <img src="./images/hero/background3.webp" alt="Construction Workers" class="hero-bg">
+                <img src="./images/clearing.jpg" alt="Cargo and Forwarding" class="hero-bg">
                 <div class="hero-content">
-                    <div class="hero-title-container">
-                        <h1 class="display-3 fw-bold mb-2">Clearing & Forwarding</h1>
-                    </div>
+                    <h1 class="display-3 fw-bold mb-2">Clearing & Forwarding</h1>
                     <p class="lead mb-2">Trusted clearing, forwarding and logistics services to move your cargo safely and efficiently.</p>
-                    <div class="d-flex gap-3">
-                        <a href="services.html" class="btn btn-primary btn-lg rounded-pill px-4">Learn More</a>
-                        <a href="contact-us.html" class="btn btn-outline-light btn-lg rounded-pill px-4">Get in
-                            Touch</a>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="services.html" class="btn-modern btn-primary-modern">Learn More</a>
+                        <a href="contact-us.html" class="btn-modern btn-outline-modern">Get in Touch</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What We Do Section -->
-    <section class="py-5 fade-in-section" style="background: url('3.webp') top/cover;">
+     <section class="stats-section fade-in-section">
         <div class="container">
-            <h2 class="section-title text-center">What We Do</h2>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 fade-in-section delay-1">
-                    <div class="service-card p-4 h-100 d-flex flex-column bg-light">
-                        <div class="align-items-center mb-3 text-center">
-                            <i class="bi bi-tools service-icon me-2"
-                                style="font-weight: 400; color: transparent; -webkit-text-stroke: 2px #f6b61b;"></i>
-                        </div>
-                        <h3 class="text-center">Security</h3>
-                        <div class="m-auto text-center">
-                            <img src="./images/security.jpg" alt="Security Services" class="col-12 w-w-d-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 fade-in-section delay-2">
-                    <div class="service-card p-4 h-100 d-flex flex-column bg-light">
-                        <div class="align-items-center mb-3 text-center">
-                            <i class="bi bi-people service-icon me-2"></i>
-                        </div>
-                        <h3 class="text-center">Leasing</h3>
-                        <div class="m-auto text-center">
-                            <img src="./images/leasing.jpg" alt="Leasing Services" class="col-12 w-w-d-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 fade-in-section delay-3">
-                    <div class="service-card p-4 h-100 d-flex flex-column bg-light">
-                        <div class="align-items-center mb-3 text-center">
-                            <i class="bi bi-hammer service-icon me-2"
-                                style="color: transparent; -webkit-text-stroke: 2px #f6b61b;"></i>
-                        </div>
-                        <h3 class="text-center">Logistics</h3>
-                        <div class="m-auto text-center mt-2">
-                            <img src="./images/logistics.jpg" alt="Marine Equipment & Logistics" class="col-12 w-w-d-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 fade-in-section delay-4">
-                    <div class="service-card p-4 h-100 d-flex flex-column bg-light">
-                        <div class="mb-3 text-center">
-                            <i class="bi bi-cone service-icon me-2"
-                                style="color: transparent; -webkit-text-stroke: 2px #f6b61b;"></i>
-                        </div>
-                        <h3 class="text-center">Procurement</h3>
-                        <div class="m-auto text-center">
-                            <img src="./images/procurement.jpg" alt="Procurement & Consultancy" class="col-12 w-w-d-img">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    </div>
-
-    <!-- Stats Section -->
-    <section class="py-5 bg-light fade-in-section">
-        <div class="container py-5">
             <div class="row g-4">
                 <div class="col-md-3 col-6">
                     <div class="stats-item">
-                        <div class="stats-number" data-target="25">0+</div>
+                        <span class="stats-number" data-target="25">0</span>+
                         <div class="stats-label">Completed Projects</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="stats-item">
-                        <div class="stats-number" data-target="500">0+</div>
+                        <span class="stats-number" data-target="500">0</span>+
                         <div class="stats-label">Equipments & Tools</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="stats-item">
-                        <div class="stats-number" data-target="120">0+</div>
+                        <span class="stats-number" data-target="120">0</span>+
                         <div class="stats-label">Professionals</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="stats-item">
-                        <div class="stats-number" data-target="100">0%</div>
+                        <span class="stats-number" data-target="100">0</span>%
                         <div class="stats-label">Client Satisfaction</div>
                     </div>
                 </div>
@@ -514,26 +932,14 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="" class="py-5 about fade-in-section">
-        <div class="container py-5">
-            <h2 class="section-title text-center">About Us</h2>
+    <section class="section-padding about-section fade-in-section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
             <div class="row align-items-center">
                 <div class="col-lg-7 p-4">
-                    <p class="lead">Ikechi Global Services is a leading construction, logistics and engineering firm
-                        dedicated to
-                        delivering exceptional quality and innovative solutions.</p>
+                    <p class="lead">Ikechi Global Services is a leading construction, logistics and engineering firm dedicated to delivering exceptional quality and innovative solutions.</p>
                     <hr>
                     <ul class="custom-checkmarks ps-3">
-                        <!-- <li class="mb-4">
-                            <h5 class="mb-1">Our History</h5>
-                            <span>
-                                Founded in 2025, we've grown from a small local contractor to a nationally recognized
-                                construction firm with projects across multiple sectors including commercial,
-                                residential,
-                                industrial, and infrastructure.
-                            </span>
-                        </li> -->
                         <li>
                             <h5 class="mb-1">Our Expertise</h5>
                             <span>
@@ -543,203 +949,150 @@
                     </ul>
 
                     <div class="mt-4">
-                        <a href="about.html" class="btn btn-primary rounded-pill px-4">Learn More</a>
+                        <a href="about.html" class="btn-modern btn-primary-modern">Learn More</a>
                     </div>
                 </div>
                 <div class="col-lg-5 mb-4 mb-lg-0">
-                    <img src="./images/about-us-1.jpg" alt="About Us"
-                        class="img-fluid about-img">
+                    <img src="./images/about-us-1.jpg" alt="About Us" class="img-fluid about-img">
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Services Section -->
-    <section id="Services" class="py-5 fade-in-section">
-        <div class="container py-5">
-            <h2 class="section-title text-center">Our Services</h2>
+    <section class="section-padding fade-in-section" style="background-color: #fdfdfd;">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
             <p class="text-center mb-5">Explore our comprehensive range of professional services</p>
 
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card h-100">
-                        <div class="position-relative">
-                            <img src="./images/security-2.jpg" class="w-100" style="height: 250px; object-fit: cover;" alt="Security Services">
-                            <div class="service-icon-overlay">
-                                <i class="fas fa-shield-alt fa-2x"></i>
-                            </div>
+                    <div class="modern-card">
+                        <img src="./images/security.jpg" class="modern-card-img" alt="Security Services">
+                        <div class="modern-card-icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <div class="p-4">
-                            <h4 class="mb-3">Security Services</h4>
-                            <p class="mb-4">Professional security solutions including static guards, mobile patrols and site protection tailored to your operations.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill">Learn More</a>
+                        <div class="modern-card-body">
+                            <h4 class="modern-card-title">Security Services</h4>
+                            <p class="modern-card-text">Professional security solutions including static guards, mobile patrols and site protection tailored to your operations.</p>
+                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card h-100">
-                        <div class="position-relative">
-                            <img src="./images/leasing-2.jpg" class="w-100" style="height: 250px; object-fit: cover;" alt="Leasing Services">
-                            <div class="service-icon-overlay">
-                                <i class="fas fa-handshake fa-2x"></i>
-                            </div>
+                    <div class="modern-card">
+                        <img src="./images/leasing-2.jpg" class="modern-card-img" alt="Leasing Services">
+                        <div class="modern-card-icon">
+                            <i class="fas fa-handshake"></i>
                         </div>
-                        <div class="p-4">
-                            <h4 class="mb-3">Leasing Services</h4>
-                            <p class="mb-4">Flexible leasing solutions for equipment and manpower — short- or long-term arrangements to meet project demands.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill">Learn More</a>
+                        <div class="modern-card-body">
+                            <h4 class="modern-card-title">Leasing Services</h4>
+                            <p class="modern-card-text">Flexible leasing solutions for equipment and manpower — short- or long-term arrangements to meet project demands.</p>
+                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card h-100">
-                        <div class="position-relative">
-                            <img src="./images/marine-equipment.jpg" class="w-100" style="height: 250px; object-fit: cover;" alt="Marine Equipment & Logistics">
-                            <div class="service-icon-overlay">
-                                <i class="fas fa-ship fa-2x"></i>
-                            </div>
+                    <div class="modern-card">
+                        <img src="./images/marine-equipment.jpg" class="modern-card-img" alt="Marine Equipment & Logistics">
+                        <div class="modern-card-icon">
+                            <i class="fas fa-ship"></i>
                         </div>
-                        <div class="p-4">
-                            <h4 class="mb-3">Marine Equipment & Logistics</h4>
-                            <p class="mb-4">Supply and logistics for marine operations including equipment hire, vessel support and offshore logistics coordination.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill">Learn More</a>
+                        <div class="modern-card-body">
+                            <h4 class="modern-card-title">Marine Equipment & Logistics</h4>
+                            <p class="modern-card-text">Supply and logistics for marine operations including equipment hire, vessel support and offshore logistics coordination.</p>
+                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card h-100">
-                        <div class="position-relative">
-                            <img src="./images/engineering-service.jpg" class="w-100" style="height: 250px; object-fit: cover;" alt="Engineering Services">
-                            <div class="service-icon-overlay">
-                                <i class="fas fa-cogs fa-2x"></i>
-                            </div>
+                    <div class="modern-card">
+                        <img src="./images/engineering-service.jpg" class="modern-card-img" alt="Engineering Services">
+                        <div class="modern-card-icon">
+                            <i class="fas fa-cogs"></i>
                         </div>
-                        <div class="p-4">
-                            <h4 class="mb-3">Engineering Services</h4>
-                            <p class="mb-4">Multidisciplinary engineering support — design, analysis, fabrication and commissioning across civil, mechanical and electrical disciplines.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill">Learn More</a>
+                        <div class="modern-card-body">
+                            <h4 class="modern-card-title">Engineering Services</h4>
+                            <p class="modern-card-text">Multidisciplinary engineering support — design, analysis, fabrication and commissioning across civil, mechanical and electrical disciplines.</p>
+                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card h-100">
-                        <div class="position-relative">
-                            <img src="./images/procurement-2.jpg" class="w-100" style="height: 250px; object-fit: cover;" alt="Procurement & Consultancy">
-                            <div class="service-icon-overlay">
-                                <i class="fas fa-shopping-cart fa-2x"></i>
-                            </div>
+                    <div class="modern-card">
+                        <img src="./images/procurement-2.jpg" class="modern-card-img" alt="Procurement & Consultancy">
+                        <div class="modern-card-icon">
+                            <i class="fas fa-shopping-cart"></i>
                         </div>
-                        <div class="p-4">
-                            <h4 class="mb-3">Procurement & Consultancy</h4>
-                            <p class="mb-4">End-to-end procurement services combined with expert consultancy to optimize cost, lead times and supplier performance.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill">Learn More</a>
+                        <div class="modern-card-body">
+                            <h4 class="modern-card-title">Procurement & Consultancy</h4>
+                            <p class="modern-card-text">End-to-end procurement services combined with expert consultancy to optimize cost, lead times and supplier performance.</p>
+                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card h-100">
-                        <div class="position-relative">
-                            <img src="./images/clearing.jpg" class="w-100" style="height: 250px; object-fit: cover;" alt="Clearing & Forwarding">
-                            <div class="service-icon-overlay">
-                                <i class="fas fa-truck-loading fa-2x"></i>
-                            </div>
+                    <div class="modern-card">
+                        <img src="./images/clearing.jpg" class="modern-card-img" alt="Clearing & Forwarding">
+                        <div class="modern-card-icon">
+                            <i class="fas fa-truck-loading"></i>
                         </div>
-                        <div class="p-4">
-                            <h4 class="mb-3">Clearing & Forwarding</h4>
-                            <p class="mb-4">Reliable clearing, forwarding and freight services to ensure smooth cross-border movement and on-time delivery of cargo.</p>
-                            <a href="#" class="btn btn-outline-primary rounded-pill">Learn More</a>
+                        <div class="modern-card-body">
+                            <h4 class="modern-card-title">Clearing & Forwarding</h4>
+                            <p class="modern-card-text">Reliable clearing, forwarding and freight services to ensure smooth cross-border movement and on-time delivery of cargo.</p>
+                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-5">
-                <a href="#" class="btn btn-primary btn-lg rounded-pill px-4">View All Services</a>
+                <a href="#" class="btn-modern btn-primary-modern services-link">View All Services</a>
             </div>
         </div>
-
-        <style>
-            .service-card {
-                background: #fff;
-                border-radius: 15px;
-                overflow: hidden;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                transition: transform 0.3s ease;
-            }
-
-            .service-card:hover {
-                transform: translateY(-10px);
-            }
-
-            .service-icon-overlay {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                background: #f6b61b;
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-            }
-
-            .service-card img {
-                display: block;
-                width: 100%;
-                height: 250px;
-                object-fit: cover;
-            }
-        </style>
     </section>
 
-    <!-- Client Slider Section -->
-    <section class="py-5 fade-in-section">
-        <div class="container py-5">
-            <h2 class="section-title text-center">Our Clients</h2>
+    <section class="section-padding client-section fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Our Clients</h2>
             <p class="text-center mb-5">We're proud to have worked with these leading organizations</p>
 
             <div class="owl-carousel owl-theme client-carousel">
                 <div class="item text-center">
-                    <img src="/clients/Alacrity.jpg" alt="Client 1" class="img-fluid client-logo">
+                    <img src="https://placehold.co/150x80/eeeeee/999999?text=Alacrity" alt="Client Alacrity" class="img-fluid client-logo">
                 </div>
                 <div class="item text-center">
-                    <img src="/clients/Chevron.jpg" alt="Client 2" class="img-fluid client-logo">
+                    <img src="https://placehold.co/150x80/eeeeee/999999?text=Chevron" alt="Client Chevron" class="img-fluid client-logo">
                 </div>
                 <div class="item text-center">
-                    <img src="/clients/Desicon.jpg" alt="Client 3" class="img-fluid client-logo">
+                    <img src="https://placehold.co/150x80/eeeeee/999999?text=Desicon" alt="Client Desicon" class="img-fluid client-logo">
                 </div>
                 <div class="item text-center">
-                    <img src="/clients/G&H.jpg" alt="Client 4" class="img-fluid client-logo">
+                    <img src="https://placehold.co/150x80/eeeeee/999999?text=G%26H" alt="Client G&H" class="img-fluid client-logo">
                 </div>
                 <div class="item text-center">
-                    <img src="/clients/Lekoil.jpg" alt="Client 5" class="img-fluid client-logo">
+                    <img src="https://placehold.co/150x80/eeeeee/999999?text=Lekoil" alt="Client Lekoil" class="img-fluid client-logo">
                 </div>
                 <div class="item text-center">
-                    <img src="/clients/MidWtr.jpg" alt="Client 6" class="img-fluid client-logo">
+                    <img src="https://placehold.co/150x80/eeeeee/999999?text=MidWtr" alt="Client MidWtr" class="img-fluid client-logo">
                 </div>
                 <div class="item text-center">
-                    <img src="/clients/ngc.jpg" alt="Client 7" class="img-fluid client-logo">
+                    <img src="https://placehold.co/150x80/eeeeee/999999?text=NGC" alt="Client NGC" class="img-fluid client-logo">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer fade-in-section">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
                     <h3 class="text-white mb-4"><span class="text-primary">Ikechi</span>Global</h3>
-                    <p>Leading the way in innovative construction and engineering solutions since 1995. We build with
-                        integrity, quality, and a commitment to excellence.</p>
+                    <p>Leading the way in innovative construction and engineering solutions since 1995. We build with integrity, quality, and a commitment to excellence.</p>
                     <div class="mt-4">
                         <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
                         <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
@@ -759,25 +1112,21 @@
                 <div class="col-lg-2 col-md-4">
                     <h4 class="text-white mb-4">Services</h4>
                     <ul class="list-unstyled footer-links">
-                        <li class="mb-2"><a href="#">Commercial Construction</a></li>
-                        <li class="mb-2"><a href="#">Residential Development</a></li>
-                        <li class="mb-2"><a href="#">Industrial Facilities</a></li>
-                        <li class="mb-2"><a href="#">Infrastructure</a></li>
-                        <li class="mb-2"><a href="#">Sustainable Construction</a></li>
-                        <li class="mb-2"><a href="#">Renovation</a></li>
+                        <li class="mb-2"><a href="#">Security Services</a></li>
+                        <li class="mb-2"><a href="#">Leasing Services</a></li>
+                        <li class="mb-2"><a href="#">Marine Logistics</a></li>
+                        <li class="mb-2"><a href="#">Engineering</a></li>
+                        <li class="mb-2"><a href="#">Procurement</a></li>
+                        <li class="mb-2"><a href="#">Clearing & Forwarding</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-4" id="contact">
                     <h4 class="text-white mb-4">Contact Us</h4>
                     <ul class="list-unstyled footer-links">
-                        <li class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-warning"></i> 123 Construction Ave,
-                            Building City, BC 12345</li>
+                        <li class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-warning"></i> 123 Construction Ave, Building City, BC 12345</li>
                         <li class="mb-3"><i class="bi bi-telephone-fill me-2 text-warning"></i> (123) 456-7890</li>
-                        <li class="mb-3"><i class="bi bi-envelope-fill me-2 text-warning"></i>
-                            info@ikechiglobalservices.com
-                        </li>
-                        <li class="mb-3"><i class="bi bi-clock-fill me-2 text-warning"></i> Mon-Fri: 8:00 AM - 6:00 PM
-                        </li>
+                        <li class="mb-3"><i class="bi bi-envelope-fill me-2 text-warning"></i> info@ikechiglobalservices.com</li>
+                        <li class="mb-3"><i class="bi bi-clock-fill me-2 text-warning"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
                     </ul>
                 </div>
             </div>
@@ -793,20 +1142,169 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <!-- <a href="#" class="btn btn-primary btn-lg rounded-circle back-to-top"
-        style="position: fixed; bottom: 20px; right: 20px; display: none;">
-        <i class="bi bi-arrow-up"></i>
-    </a> -->
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- Custom JS -->
-    <script src="./js/script.js"></script>
+    
+    <script>
+        // *** NEW SIMPLIFIED SCRIPT ***
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Mobile menu functionality
+            const hamburger = document.querySelector('.hamburger');
+            const mobileNavPanel = document.querySelector('.mobile-nav-panel');
+            const overlay = document.querySelector('.overlay');
+            const mobileNavCloseBtn = document.querySelector('.mobile-nav-panel .close-btn');
+
+            function openMobileMenu() {
+                hamburger.classList.add('active');
+                mobileNavPanel.classList.add('active');
+                overlay.classList.add('active');
+                document.body.classList.add('modal-open');
+            }
+
+            function closeMobileMenu() {
+                hamburger.classList.remove('active');
+                mobileNavPanel.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            }
+
+            hamburger.addEventListener('click', openMobileMenu);
+            mobileNavCloseBtn.addEventListener('click', closeMobileMenu);
+            overlay.addEventListener('click', closeMobileMenu);
+
+
+            // *** NEW UNIFIED SERVICES MODAL SCRIPT ***
+            const servicesDropdown = document.querySelector('.services-dropdown');
+            const servicesModalCloseBtn = document.querySelector('.services-dropdown .dropdown-close');
+            // Get ALL links that should open the services modal
+            const servicesOpenLinks = document.querySelectorAll('.services-link, .services-link-mobile');
+
+            function openServicesModal(e) {
+                e.preventDefault();
+                // Close mobile nav if it's open
+                if (mobileNavPanel.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+                servicesDropdown.classList.add('active');
+                document.body.classList.add('modal-open');
+            }
+
+            function closeServicesModal() {
+                servicesDropdown.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            }
+
+            // Attach listener to all "Services" links
+            servicesOpenLinks.forEach(link => {
+                link.addEventListener('click', openServicesModal);
+            });
+
+            // Attach listener to the close button
+            servicesModalCloseBtn.addEventListener('click', closeServicesModal);
+
+
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('main-header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Stats counter animation
+            function animateStats(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counters = document.querySelectorAll('.stats-number');
+                        const speed = 200; // Duration of the animation
+
+                        counters.forEach(counter => {
+                            const target = +counter.getAttribute('data-target');
+                            const suffix = counter.innerText.replace(/[0-9]/g, '');
+
+                            const updateCount = () => {
+                                const countText = counter.innerText.replace(/[^0-9]/g, '');
+                                const count = +countText;
+                                const increment = target / speed;
+
+                                if (count < target) {
+                                    let newCount = Math.ceil(count + increment);
+                                    if (newCount > target) newCount = target;
+                                    counter.innerText = newCount + suffix;
+                                    requestAnimationFrame(updateCount);
+                                } else {
+                                    counter.innerText = target + suffix;
+                                }
+                            };
+                            updateCount();
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }
+
+            // Initialize stats animation when in viewport
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                const statsObserver = new IntersectionObserver(animateStats, { threshold: 0.5 });
+                statsObserver.observe(statsSection);
+            }
+
+            // Fade-in sections on scroll
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        fadeInObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                fadeInObserver.observe(section);
+            });
+
+
+            // Initialize Owl Carousel (requires jQuery)
+            if (window.jQuery) {
+                $(".hero-carousel").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    autoplayHoverPause: true,
+                    nav: true,
+                    dots: true,
+                    animateOut: 'fadeOut',
+                    animateIn: 'fadeIn',
+                    smartSpeed: 1000,
+                    navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
+                });
+
+                $(".client-carousel").owlCarousel({
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    autoplayHoverPause: true,
+                    margin: 30,
+                    dots: false,
+                    responsive:{
+                        0:{ items:2 },
+                        600:{ items:3 },
+                        1000:{ items:5 }
+                    }
+                });
+            } else {
+                console.warn("jQuery not loaded, Owl Carousel will not work.");
+            }
+
+        });
+    </script>
 </body>
 
 </html>
