@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ikechi Global Services Limited | Security Services</title>
+    <title>Ikechi Global Services | Procurement & Consultancy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+</head>
     <style>
         :root {
             --primary: #f6b61b;
@@ -21,13 +23,14 @@
             --gradient: linear-gradient(135deg, var(--primary), #0a58ca);
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
+            --border-radius: 12px;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -47,14 +50,14 @@
         }
 
         .section-padding {
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         .section-title {
             position: relative;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
             text-align: center;
         }
 
@@ -473,25 +476,25 @@
             transform: translateY(0);
         }
         
-        /* --- STYLES FOR SERVICE PAGE --- */
+        /* --- MODERNIZED MARINE LOGISTICS PAGE STYLES --- */
 
-        .hero-section {
-            background-color: #102149;
+        .modern-hero {
+            background: linear-gradient(135deg, #0a2a5f 0%, #1e2a38 100%);
             color: white;
-            padding: 100px 0;
+            padding: 180px 0 100px;
+            margin-top: 70px;
             position: relative;
             overflow: hidden;
-            margin-top: 70px; /* Account for fixed header */
         }
 
-        .hero-section::before {
+        .modern-hero::before {
             content: '';
             position: absolute;
             top: 0;
             right: 0;
-            width: 40%;
+            width: 50%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(28, 36, 54, 0.8) 0%, rgba(41, 98, 255, 0.4) 100%);
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuMDMiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
             z-index: 1;
         }
 
@@ -500,23 +503,53 @@
             z-index: 2;
         }
 
+        .hero-badge {
+            display: inline-block;
+            background: rgba(246, 182, 27, 0.2);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(246, 182, 27, 0.3);
+        }
+
         .hero-title {
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
+            line-height: 1.1;
         }
 
         .hero-subtitle {
-            font-weight: 300;
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
+            font-weight: 400;
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
             max-width: 600px;
+            opacity: 0.9;
         }
         
-        /* Service Content */
-        .service-content img {
-            border-radius: 15px;
+        /* Modern Service Content */
+        .service-content-section {
+            background: white;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-content-section h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .service-content-section p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
         }
 
         .service-content-list {
@@ -541,19 +574,61 @@
             top: 5px;
         }
 
-        /* Sidebar Widget */
+        /* Modern Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            /* box-shadow: var(--shadow); */
+            transition: var(--transition);
+            /* border-left: 4px solid var(--primary); */
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h4 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Modern Sidebar */
         .service-sidebar-widget {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             margin-bottom: 2rem;
+            border-top: 4px solid var(--primary);
         }
 
         .service-sidebar-widget h4 {
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .service-sidebar-list {
@@ -563,6 +638,8 @@
 
         .service-sidebar-list li {
             margin-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding-bottom: 10px;
         }
 
         .service-sidebar-list a {
@@ -571,12 +648,12 @@
             font-weight: 500;
             transition: var(--transition);
             display: block;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 8px;
         }
 
         .service-sidebar-list a:hover {
-            background-color: #f8f9fa;
+            background-color: rgba(13, 110, 253, 0.05);
             color: var(--primary);
         }
         
@@ -586,27 +663,141 @@
             font-weight: 600;
         }
 
-        /* CTA Widget */
-        .service-cta {
+        /* Modern CTA Section */
+        .modern-cta {
+            background: linear-gradient(135deg, var(--dark) 0%, #0a2a5f 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modern-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuMDMiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            z-index: 1;
+        }
+
+        .modern-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .modern-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modern-cta p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        .btn-modern {
+            background: var(--primary);
+            color: var(--dark);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-modern:hover {
+            background: #e0a416;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Modern Service Cards */
+        .modern-service-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modern-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .modern-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .modern-service-card h5 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .modern-service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .service-icon-modern {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Marine Specific Styles */
+        .marine-stat {
             background: var(--gradient);
             color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
             text-align: center;
+            margin-bottom: 2rem;
         }
-        
-        .service-cta .btn-light-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            border-radius: 30px;
-            padding: 10px 25px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
+
+        .marine-stat h3 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
         }
-        
-        .service-cta .btn-light-outline:hover {
+
+        .marine-stat p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .marine-process {
             background: white;
-            color: var(--dark);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-bottom: 2rem;
+            border-top: 4px solid var(--primary);
+        }
+
+        .process-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
         }
 
         /* Responsive Design */
@@ -619,13 +810,13 @@
                 display: flex;
             }
             
-            .hero-subtitle {
+            .hero-title {
                 font-size: 2.5rem;
             }
         }
 
         @media (max-width: 768px) {
-            .hero-subtitle {
+            .hero-title {
                 font-size: 2rem;
             }
 
@@ -636,178 +827,274 @@
             .mobile-nav-panel {
                 width: 280px;
             }
+
+            .service-content-section {
+                padding: 2rem;
+            }
         }
 
         @media (max-width: 576px) {
             .mobile-nav-panel {
                 width: 100%;
             }
+
+            .modern-hero {
+                padding: 150px 0 80px;
+            }
+        }
+
+        .procurement-process {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-bottom: 2rem;
+            border-top: 4px solid var(--primary);
+        }
+
+        .consultancy-services-section .feature-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+            text-align: left;
         }
     </style>
-</head>
-
 <body>
-    <header id="main-header">
-        <a href="index.html" class="logo">
-            <i class="fas fa-drafting-compass logo-icon"></i>
-            <div class="logo-text">Ikechi<span>Global</span></div>
-        </a>
-
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a class="services-link">Services</a></li>
-                <li><a href="contact-us.html">Contact</a></li>
-            </ul>
-        </nav>
-
-
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </header>
-
-    <div class="mobile-nav-panel">
-        <button class="close-btn">&times;</button>
-        <div class="modal-logo">
-            <i class="fas fa-drafting-compass logo-icon"></i>
-            <div class="logo-text">Ikechi<span>Global</span></div>
-        </div>
-
-        <nav class="modal-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a class="services-link-mobile">Services</a></li>
-                <li><a href="contact-us.html">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="nav-buttons mt-4">
-            <button class="btn btn-primary w-100">Get Quote</button>
-            <button class="btn btn-secondary w-100 mt-3">Login</button>
-        </div>
-    </div>
-    <div class="overlay"></div>
-
-    <div class="services-dropdown">
-        <button class="dropdown-close">&times;</button>
-        <div class="services-header">
-            <h2>Our Services</h2>
-            <p>Comprehensive solutions tailored to meet your business needs across multiple industries</p>
-        </div>
-        <div class="services-grid">
-            <a href="security-services.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-shield-alt service-icon"></i>
-                    <h3>Security Services</h3>
-                    <p>Professional security solutions including static guards, mobile patrols and site protection tailored to your operations.</p>
-                </div>
-            </a>
-            <a href="leasing-services.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-handshake service-icon"></i>
-                    <h3>Leasing Services</h3>
-                    <p>Flexible leasing solutions for equipment and manpower — short- or long-term arrangements to meet project demands.</p>
-                </div>
-            </a>
-            <a href="marine-logistics.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-ship service-icon"></i>
-                    <h3>Marine Equipment & Logistics</h3>
-                    <p>Supply and logistics for marine operations including equipment hire, vessel support and offshore logistics coordination.</p>
-                </div>
-            </a>
-            <a href="engineering-services.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-cogs service-icon"></i>
-                    <h3>Engineering Services</h3>
-                    <p>Multidisciplinary engineering support — design, analysis, fabrication and commissioning across civil, mechanical and electrical disciplines.</p>
-                </div>
-            </a>
-            <a href="procurement-consultancy.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-clipboard-list service-icon"></i>
-                    <h3>Procurement & Consultancy</h3>
-                    <p>End-to-end procurement services combined with expert consultancy to optimize cost, lead times and supplier performance.</p>
-                </div>
-            </a>
-            <a href="clearing-forwarding.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-truck service-icon"></i>
-                    <h3>Clearing & Forwarding</h3>
-                    <p>Reliable clearing, forwarding and freight services to ensure smooth cross-border movement and on-time delivery of cargo.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-
-
-    <section class="hero-section">
+<?php include_once 'header.php'; ?>
+    <!-- Modern Hero Section -->
+    <section class="modern-hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <p class="hero-title">Our Services</p>
-                    <h1 class="hero-subtitle">Security Services</h1>
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="hero-content">
+                        <span class="hero-badge" data-aos="fade-up" data-aos-delay="200">Strategic Sourcing & Advisory</span>
+                        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">Procurement & Consultancy Services</h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">Strategic procurement solutions and expert consultancy services to optimize your supply chain, reduce costs, and drive business growth.</p>
+                        <a href="#contact" class="btn-modern" data-aos="fade-up" data-aos-delay="500">Request Consultation</a>
+                    </div>
                 </div>
-                <div class="col-lg-6 d-none d-lg-block">
-                    <img src="https://placehold.co/600x400/1e2a38/ffffff?text=Security+Services" alt="Security Services" class="img-fluid hero-image">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <img src="https://placehold.co/600x400/0a3a5f/f6b61b?text=Procurement+%26+Consultancy" 
+                         alt="Procurement & Consultancy Services" 
+                         class="img-fluid rounded-4">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding fade-in-section">
+    <section class="section-padding">
         <div class="container">
             <div class="row g-5">
-                
-                <div class="col-lg-8 service-content">
-                    <h2 class="mb-4">Professional Security Solutions</h2>
-                    <p class="lead">At Ikechi Global Services, we provide comprehensive, professional security solutions tailored to protect your assets, operations, and personnel. Our expertise ensures a safe and secure environment, minimizing risk and allowing your business to operate with confidence.</p>
-                    
-                    <img src="https://placehold.co/800x450/cccccc/333333?text=Security+Team+on+Site" alt="Security Team" class="img-fluid mb-4">
-                    
-                    <p>We understand that every client has unique security needs. Our approach involves a thorough risk assessment to identify vulnerabilities, followed by the deployment of a customized security plan. This plan integrates highly-trained personnel, advanced technology, and proven protocols to provide robust protection.</p>
-
-                    <h3 class="mt-5 mb-4">Key Service Features</h3>
-                    <ul class="service-content-list">
-                        <li><strong>Static Guarding:</strong> Uniformed, licensed security officers for access control, asset protection, and visible deterrence at your site.</li>
-                        <li><strong>Mobile Patrols:</strong> Marked security vehicles performing regular or random patrols to monitor large areas, multi-site properties, and respond to alarms.</li>
-                        <li><strong>Site Protection:</strong> Specialized security for construction sites, industrial plants, and critical infrastructure to prevent theft, vandalism, and unauthorized access.</li>
-                        <li><strong>CCTV & Alarm Monitoring:</strong> 24/7 remote monitoring of your surveillance systems, with rapid-response protocols.</li>
-                        <li><strong>Event Security:</strong> Professional crowd management and security for corporate events, public gatherings, and private functions.</li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-4">
-                    <div class="service-sidebar-widget">
-                        <h4>All Services</h4>
-                        <ul class="service-sidebar-list">
-                            <li class="active"><a href="security-services.html">Security Services</a></li>
-                            <li><a href="leasing-services.html">Leasing Services</a></li>
-                            <li><a href="marine-logistics.html">Marine Equipment & Logistics</a></li>
-                            <li><a href="engineering-services.html">Engineering Services</a></li>
-                            <li><a href="procurement-consultancy.html">Procurement & Consultancy</a></li>
-                            <li><a href="clearing-forwarding.html">Clearing & Forwarding</a></li>
-                        </ul>
+                <!-- Main Content -->
+                <div class="col-lg-8 service-content-section" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Overview Section -->
+                    <div class="" data-aos="fade-up" data-aos-delay="200">
+                        <h2>Strategic Procurement & Business Consultancy</h2>
+                        <p>At Ikechi Global Services, we provide comprehensive procurement solutions and expert consultancy services to help businesses optimize their supply chains, reduce costs, and improve operational efficiency. Our strategic approach combines market intelligence with proven methodologies to deliver measurable results.</p>
                     </div>
                     
-                    <div class="service-sidebar-widget service-cta">
-                        <h4 class="text-white">Need a Quote?</h4>
-                        <p class="mb-4">Let our experts provide a custom solution for your security needs.</p>
-                        <a href="contact-us.html" class="btn-light-outline">Contact Us</a>
+                    <!-- Feature Grid -->
+                    <div class="feature-grid">
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                            <i class="bi bi-graph-up-arrow feature-icon"></i>
+                            <h4>Cost Optimization</h4>
+                            <p>Strategic approaches to reduce procurement costs while maintaining quality and service levels.</p>
+                        </div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                            <i class="bi bi-shield-check feature-icon"></i>
+                            <h4>Risk Management</h4>
+                            <p>Comprehensive risk assessment and mitigation strategies for your supply chain.</p>
+                        </div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-lightning-charge feature-icon"></i>
+                            <h4>Process Efficiency</h4>
+                            <p>Streamlined procurement processes to reduce cycle times and improve productivity.</p>
+                        </div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                            <i class="bi bi-bar-chart feature-icon"></i>
+                            <h4>Performance Metrics</h4>
+                            <p>Data-driven insights and KPIs to measure and improve procurement performance.</p>
+                        </div>
                     </div>
                 </div>
-
+                
+                <!-- Sidebar -->
+                <div class="col-lg-4" data-aos="fade-left" data-aos-delay="200">                   
+                    <!-- Contact Widget -->
+                    <div class="service-sidebar-widget" data-aos="fade-up" data-aos-delay="300">
+                        <h4>Get In Touch</h4>
+                        <p>Need procurement solutions or business consultancy? Contact our experts today.</p>
+                        <a href="contact.html" class="btn-modern w-100 text-center mt-3">Contact Us</a>
+                    </div>
+                    
+                    <!-- Image -->
+                    <img src="./images/procurement-consultancy.jpg" class="img-fluid rounded-4 mt-4" alt="Procurement & Consultancy" data-aos="fade-up" data-aos-delay="400">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our Procurement & Consultancy Services</h2>
+                <p class="lead">Comprehensive solutions to optimize your supply chain and business operations</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="modern-service-card">
+                        <i class="bi bi-search service-icon-modern"></i>
+                        <h5>Strategic Sourcing</h5>
+                        <p>Comprehensive supplier identification, evaluation, and selection to optimize your procurement strategy.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="modern-service-card">
+                        <i class="bi bi-clipboard-data service-icon-modern"></i>
+                        <h5>Supply Chain Analysis</h5>
+                        <p>In-depth analysis of your supply chain to identify inefficiencies and improvement opportunities.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="modern-service-card">
+                        <i class="bi bi-people service-icon-modern"></i>
+                        <h5>Vendor Management</h5>
+                        <p>Supplier relationship management, performance monitoring, and contract administration services.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="modern-service-card">
+                        <i class="bi bi-cash-coin service-icon-modern"></i>
+                        <h5>Cost Reduction</h5>
+                        <p>Identification and implementation of cost-saving strategies across your procurement operations.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="modern-service-card">
+                        <i class="bi bi-gear service-icon-modern"></i>
+                        <h5>Process Improvement</h5>
+                        <p>Streamlining procurement processes and implementing best practices for efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="modern-service-card">
+                        <i class="bi bi-graph-up service-icon-modern"></i>
+                        <h5>Market Intelligence</h5>
+                        <p>Comprehensive market research, supplier intelligence, and pricing analysis services.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Process Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our Procurement Process</h2>
+                <p class="lead">Structured approach to delivering optimal procurement outcomes</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="procurement-process">
+                        <i class="bi bi-clipboard-data process-icon"></i>
+                        <h4>Needs Assessment</h4>
+                        <p>Comprehensive analysis of your requirements, specifications, and procurement objectives.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="procurement-process">
+                        <i class="bi bi-search process-icon"></i>
+                        <h4>Market Research</h4>
+                        <p>Thorough market analysis to identify potential suppliers and market conditions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-left" data-aos-delay="300">
+                    <div class="procurement-process">
+                        <i class="bi bi-check-circle process-icon"></i>
+                        <h4>Implementation</h4>
+                        <p>Supplier selection, contract negotiation, and implementation of procurement solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultancy Services Section -->
+    <section class="section-padding bg-light">
+        <div class="container consultancy-services-section">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Consultancy Services</h2>
+                <p class="lead">Expert advisory services to drive business improvement and growth</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="feature-card">
+                        <h4>Supply Chain Consultancy</h4>
+                        <p>Comprehensive analysis and optimization of your end-to-end supply chain operations.</p>
+                        <ul class="service-content-list mt-3">
+                            <li>Supply Chain Strategy Development</li>
+                            <li>Logistics Network Optimization</li>
+                            <li>Inventory Management Solutions</li>
+                            <li>Warehouse and Distribution Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="feature-card">
+                        <h4>Procurement Transformation</h4>
+                        <p>Strategic guidance to transform your procurement function into a value-adding business unit.</p>
+                        <ul class="service-content-list mt-3">
+                            <li>Procurement Strategy Development</li>
+                            <li>Digital Procurement Implementation</li>
+                            <li>Procurement Organization Design</li>
+                            <li>Procurement Technology Advisory</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="300">
+                    <div class="feature-card">
+                        <h4>Strategic Sourcing Advisory</h4>
+                        <p>Expert guidance on category management, supplier relationships, and sourcing strategies.</p>
+                        <ul class="service-content-list mt-3">
+                            <li>Category Management Strategies</li>
+                            <li>Supplier Relationship Management</li>
+                            <li>Sourcing Strategy Development</li>
+                            <li>Contract Management Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="400">
+                    <div class="feature-card">
+                        <h4>Performance Improvement</h4>
+                        <p>Data-driven analysis and recommendations to improve procurement and supply chain performance.</p>
+                        <ul class="service-content-list mt-3">
+                            <li>Performance Measurement Framework</li>
+                            <li>KPI Development and Tracking</li>
+                            <li>Benchmarking Services</li>
+                            <li>Continuous Improvement Programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern CTA Section -->
+    <section class="modern-cta">
+        <div class="container">
+            <div class="modern-cta-content" data-aos="fade-up" data-aos-delay="100">
+                <h2>Ready to Optimize Your Procurement Operations?</h2>
+                <p>Contact us today to discuss your procurement and consultancy needs and discover how our strategic solutions can drive cost savings, improve efficiency, and enhance your supply chain performance.</p>
+                <a href="contact.html" class="btn-modern">Get Started Now</a>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
@@ -829,7 +1116,7 @@
                         <li class="mb-2"><a href="index.html">Home</a></li>
                         <li class="mb-2"><a href="about.html">About Us</a></li>
                         <li class="mb-2"><a href="projects.html">Projects</a></li>
-                        <li class="mb-2"><a class="services-link">Services</a></li>
+                        <li><a class="services-link">Services</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4">
@@ -839,7 +1126,7 @@
                         <li class="mb-2"><a href="leasing-services.html">Leasing Services</a></li>
                         <li class="mb-2"><a href="marine-logistics.html">Marine Logistics</a></li>
                         <li class="mb-2"><a href="engineering-services.html">Engineering</a></li>
-                        <li class="mb-2"><a href="procurement-consultancy.html">Procurement</a></li>
+                        <li class="mb-2"><a href="procurement-consultancy.html">Procurement & Consultancy</a></li>
                         <li class="mb-2"><a href="clearing-forwarding.html">Clearing & Forwarding</a></li>
                     </ul>
                 </div>
@@ -869,7 +1156,6 @@
             </div>
         </div>
     </footer>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -903,7 +1189,6 @@
             mobileNavCloseBtn.addEventListener('click', closeMobileMenu);
             overlay.addEventListener('click', closeMobileMenu);
 
-
             // *** UNIFIED SERVICES MODAL SCRIPT ***
             const servicesDropdown = document.querySelector('.services-dropdown');
             const servicesModalCloseBtn = document.querySelector('.services-dropdown .dropdown-close');
@@ -929,7 +1214,6 @@
                 link.addEventListener('click', openServicesModal);
             });
             servicesModalCloseBtn.addEventListener('click', closeServicesModal);
-
 
             // Header scroll effect
             window.addEventListener('scroll', () => {

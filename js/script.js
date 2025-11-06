@@ -196,3 +196,12 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // Initialize AOS if available
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 120
+            });
+        }

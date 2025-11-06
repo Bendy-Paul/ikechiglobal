@@ -11,7 +11,8 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 <style>
     :root {
         --primary: #f6b61b;
@@ -770,121 +771,18 @@
         }
     }
 </style>
+
 </head>
 
 <body>
-    
-    <header id="main-header">
-        <a href="index.html" class="logo">
-            <i class="fas fa-drafting-compass logo-icon"></i>
-            <div class="logo-text">Ikechi<span>Global</span></div>
-        </a>
-
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-                <li>
-                    <a href="#" class="services-link"><i class="fas fa-cogs"></i> Services</a>
-                </li>
-                <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                <li><a href="contact-us.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </header>
-
-    
-    <div class="mobile-nav-panel">
-        <button class="close-btn">&times;</button>
-        <div class="modal-logo">
-            <i class="fas fa-drafting-compass logo-icon"></i>
-            <div class="logo-text">Ikechi<span>Global</span></div>
-        </div>
-
-        <nav class="modal-nav">
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-                <li>
-                    <a href="#" class="services-link-mobile"><i class="fas fa-cogs"></i> Services</a>
-                </li>
-                <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                <li><a href="contact-us.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="nav-buttons" style="margin-top: 30px;">
-            <button class="btn btn-primary w-100">Get Quote</button>
-            <button class="btn btn-secondary w-100 mt-3">Login</button>
-        </div>
-    </div>
-    <div class="overlay"></div>
-
-
-    <div class="services-dropdown">
-        <button class="dropdown-close">&times;</button>
-        <div class="services-header">
-            <h2>Our Services</h2>
-            <p>Comprehensive solutions tailored to meet your business needs across multiple industries</p>
-        </div>
-        <div class="services-grid">
-            <a href="security-services.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-shield-alt service-icon"></i>
-                    <h3>Security Services</h3>
-                    <p>Professional security solutions including static guards, mobile patrols and site protection.</p>
-                </div>
-            </a>
-            <a href="leasing-services.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-handshake service-icon"></i>
-                    <h3>Leasing Services</h3>
-                    <p>Flexible leasing solutions for equipment and manpower.</p>
-                </div>
-            </a>
-            <a href="marine-logistics.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-ship service-icon"></i>
-                    <h3>Marine Equipment & Logistics</h3>
-                    <p>Supply and logistics for marine operations including equipment hire.</p>
-                </div>
-            </a>
-            <a href="engineering-services.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-cogs service-icon"></i>
-                    <h3>Engineering Services</h3>
-                    <p>Multidisciplinary engineering support — design, analysis and commissioning.</p>
-                </div>
-            </a>
-            <a href="procurement-consultancy.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-clipboard-list service-icon"></i>
-                    <h3>Procurement & Consultancy</h3>
-                    <p>End-to-end procurement and specialist consultancy services.</p>
-                </div>
-            </a>
-            <a href="clearing-forwarding.html" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-truck service-icon"></i>
-                    <h3>Clearing & Forwarding</h3>
-                    <p>Reliable clearing, forwarding and freight services for cross-border trade.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <section class="hero-section">
+<?php include_once('header.php') ?>
+    <section class="hero-section" data-aos="fade-up">
         <div class="owl-carousel owl-theme hero-carousel">
             <div class="item">
                 <img src="./images/leasing.jpg" alt="Security and Logistics" class="hero-bg">
                 <div class="hero-content">
-                    <h1 class="display-3 fw-bold mb-2">Security, Leasing & Logistics</h1>
+                    <h1 class="display-3 fw-bold mb-2">Onshore/Offshore Security Services</h1>
+                    <!-- note to change -->
                     <p class="lead mb-2">Professional Security Services, Leasing solutions, Marine Equipment & Logistics, and Engineering expertise to support your operations.</p>
                     <div class="d-flex gap-3 justify-content-center flex-wrap">
                         <a href="services.html" class="btn-modern btn-primary-modern">Our Services</a>
@@ -917,7 +815,7 @@
         </div>
     </section>
 
-     <section class="stats-section fade-in-section">
+    <section class="stats-section fade-in-section" data-aos="fade-up">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-3 col-6">
@@ -948,7 +846,7 @@
         </div>
     </section>
 
-    <section class="section-padding about-section fade-in-section">
+    <section class="section-padding about-section fade-in-section" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">About Us</h2>
             <div class="row align-items-center">
@@ -975,7 +873,172 @@
         </div>
     </section>
 
-    <section class="section-padding fade-in-section" style="background-color: #fdfdfd;">
+        <!-- Our [pojects] Section -->
+    <style>
+        :root {
+            --yellow-primary: #FFD700;
+            --yellow-dark: #FFC000;
+            --yellow-light: #FFF9C4;
+        }
+
+        .services-carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item {
+            height: 500px;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover .service-bg {
+            transform: scale(1.05);
+        }
+
+        .service-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            padding: 30px;
+            color: white;
+        }
+
+        .service-badge {
+            background-color: var(--yellow-primary);
+            color: #111;
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .owl-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 15px;
+        }
+
+        .owl-prev,
+        .owl-next {
+            width: 50px;
+            height: 50px;
+            background-color: var(--yellow-primary) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem !important;
+            color: #111 !important;
+            transition: all 0.3s ease;
+        }
+
+        .owl-prev:hover,
+        .owl-next:hover {
+            background-color: white !important;
+            transform: scale(1.1);
+        }
+
+        .owl-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .owl-dot span {
+            background: #ccc !important;
+        }
+
+        .owl-dot.active span {
+            background: var(--yellow-primary) !important;
+        }
+    </style>
+    <!-- Our Projects Section -->
+    <section class="Projects py-5 bg-light fade-in-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title text-center">Our Projects</h2>
+            <p class="text-center mb-5">Explore some of our recent and notable construction projects.</p>
+            <div class="owl-carousel owl-theme projects">
+                <!-- Project Item 1 -->
+                <div class="portfolio-item">
+                    <img src="https://ghinternational.ng/images/portfolio/project/civil/full/item_civil3.jpg"
+                        class="service-bg" alt="Design Service">
+                    <div class="service-overlay">
+                        <span class="service-badge">Civil</span>
+                        <h3 class="service-title">Ologbo Access Road</h3>
+                    </div>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div class="portfolio-item">
+                    <img src="https://ghinternational.ng/images/portfolio/project/civil/full/item_civil6.jpg"
+                        class="service-bg" alt="Development Service">
+                    <div class="service-overlay">
+                        <span class="service-badge">civil</span>
+                        <h3 class="service-title">Ologbo Access Road</h3>
+                    </div>
+                </div>
+
+                <!-- Project Item 3 -->
+                <div class="portfolio-item">
+                    <img src="https://ghinternational.ng/images/portfolio/project/pipeline/full/Item_pipe11.jpg"
+                        class="service-bg" alt="Marketing Service">
+                    <div class="service-overlay">
+                        <span class="service-badge">Pipeline</span>
+                        <h3 class="service-title">Laying Pipelines</h3>
+                    </div>
+                </div>
+
+                <!-- Project Item 4 -->
+                <div class="portfolio-item">
+                    <img src="https://ghinternational.ng/images/portfolio/project/installation/full/item_installation7.jpg"
+                        class="service-bg" alt="Consulting Service">
+                    <div class="service-overlay">
+                        <span class="service-badge">installation</span>
+                        <h3 class="service-title">Installations Services</h3>
+                    </div>
+                </div>
+
+                <!-- Project Item 5 -->
+                <div class="portfolio-item">
+                    <img src="https://ghinternational.ng/images/portfolio/project/structural/full/Item_structural8.jpg"
+                        class="service-bg" alt="Branding Service">
+                    <div class="service-overlay">
+                        <span class="service-badge">Structure</span>
+                        <h3 class="service-title">Creation of Bullding Structures</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-padding fade-in-section" style="background-color: #fdfdfd;" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <p class="text-center mb-5">Explore our comprehensive range of professional services</p>
@@ -990,7 +1053,7 @@
                         <div class="modern-card-body">
                             <h4 class="modern-card-title">Security Services</h4>
                             <p class="modern-card-text">Professional security solutions including static guards, mobile patrols and site protection tailored to your operations.</p>
-                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
+                            <a href="#" class="text-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -1004,7 +1067,7 @@
                         <div class="modern-card-body">
                             <h4 class="modern-card-title">Leasing Services</h4>
                             <p class="modern-card-text">Flexible leasing solutions for equipment and manpower — short- or long-term arrangements to meet project demands.</p>
-                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
+                            <a href="#" class="text-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -1018,7 +1081,7 @@
                         <div class="modern-card-body">
                             <h4 class="modern-card-title">Marine Equipment & Logistics</h4>
                             <p class="modern-card-text">Supply and logistics for marine operations including equipment hire, vessel support and offshore logistics coordination.</p>
-                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
+                            <a href="#" class="text-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -1032,7 +1095,7 @@
                         <div class="modern-card-body">
                             <h4 class="modern-card-title">Engineering Services</h4>
                             <p class="modern-card-text">Multidisciplinary engineering support — design, analysis, fabrication and commissioning across civil, mechanical and electrical disciplines.</p>
-                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
+                            <a href="#" class="text-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -1046,7 +1109,7 @@
                         <div class="modern-card-body">
                             <h4 class="modern-card-title">Procurement & Consultancy</h4>
                             <p class="modern-card-text">End-to-end procurement services combined with expert consultancy to optimize cost, lead times and supplier performance.</p>
-                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
+                            <a href="#" class="text-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -1060,7 +1123,7 @@
                         <div class="modern-card-body">
                             <h4 class="modern-card-title">Clearing & Forwarding</h4>
                             <p class="modern-card-text">Reliable clearing, forwarding and freight services to ensure smooth cross-border movement and on-time delivery of cargo.</p>
-                            <a href="#" class="btn-modern btn-outline-primary-dark">Learn More</a>
+                            <a href="#" class="text-dark">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -1072,7 +1135,7 @@
         </div>
     </section>
 
-    <section class="section-padding client-section fade-in-section">
+    <section class="section-padding client-section fade-in-section" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">Our Clients</h2>
             <p class="text-center mb-5">We're proud to have worked with these leading organizations</p>
@@ -1103,7 +1166,7 @@
         </div>
     </section>
 
-    <footer class="footer fade-in-section">
+    <footer class="footer fade-in-section" data-aos="fade-up">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
@@ -1161,7 +1224,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    
+    <script src="./js/script.js"></script>
     <script>
         // *** NEW SIMPLIFIED SCRIPT ***
 
