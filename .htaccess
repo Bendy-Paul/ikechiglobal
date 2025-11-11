@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Prevent direct access to files
+  RewriteRule ^\.git - [F]
+  RewriteRule ^vendor - [F]
+  
+  # Don't rewrite if it's a real file
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # Don't rewrite if it's a real directory
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Rewrite all other requests to index.php
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
