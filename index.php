@@ -30,33 +30,6 @@
         }
     }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-        background-color: var(--light);
-        color: var(--text-dark);
-        line-height: 1.6;
-        overflow-x: hidden;
-    }
-
-    /* Prevent scrolling when modal is open */
-    body.modal-open {
-        overflow: hidden;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: 700;
-        line-height: 1.2;
-    }
-
-    .section-padding {
-        padding: 80px 0;
-    }
 
     .section-title {
         position: relative;
@@ -78,292 +51,6 @@
         border-radius: 2px;
     }
 
-    /* Modern Header Styles */
-    #main-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        padding: 15px 5%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: var(--transition);
-    }
-
-    #main-header.scrolled {
-        padding: 10px 5%;
-        background: rgba(255, 255, 255, 0.98);
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--dark);
-        z-index: 1001;
-        text-decoration: none;
-    }
-
-    .logo-icon {
-        margin-right: 10px;
-        color: var(--primary);
-    }
-
-    .logo span {
-        color: var(--primary);
-    }
-
-    .nav-links ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .nav-links li {
-        margin: 0 10px;
-        position: relative;
-    }
-
-    .nav-links a {
-        text-decoration: none;
-        color: var(--dark);
-        font-weight: 500;
-        position: relative;
-        padding: 8px 15px;
-        border-radius: 30px;
-        transition: var(--transition);
-    }
-
-    .nav-links a:hover {
-        color: var(--primary);
-        background: rgba(13, 110, 253, 0.05);
-    }
-
-    .nav-links a.active {
-        color: var(--primary);
-        background: rgba(13, 110, 253, 0.1);
-    }
-
-    .hamburger {
-        display: none;
-        cursor: pointer;
-        flex-direction: column;
-        width: 30px;
-        height: 30px;
-        justify-content: center;
-        align-items: center;
-        z-index: 1001;
-    }
-
-    .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 3px 0;
-        background: var(--dark);
-        transition: var(--transition);
-        border-radius: 2px;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    /* Mobile Menu Styles */
-    .mobile-nav-panel {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 300px;
-        height: 100vh;
-        background: white;
-        z-index: 2000;
-        padding: 80px 30px 30px;
-        transition: var(--transition);
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-        overflow-y: auto;
-    }
-
-    .mobile-nav-panel.active {
-        right: 0;
-    }
-
-    .modal-logo {
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--dark);
-        margin-bottom: 30px;
-    }
-
-    .modal-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .modal-nav li {
-        margin-bottom: 15px;
-    }
-
-    .modal-nav a {
-        text-decoration: none;
-        color: var(--dark);
-        font-weight: 500;
-        padding: 10px 15px;
-        border-radius: 30px;
-        display: block;
-        transition: var(--transition);
-    }
-
-    .modal-nav a:hover {
-        color: var(--primary);
-        background: rgba(13, 110, 253, 0.05);
-    }
-
-    .close-btn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--dark);
-        transition: var(--transition);
-    }
-
-    .close-btn:hover {
-        color: var(--primary);
-        transform: rotate(90deg);
-    }
-
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1999;
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-    }
-
-    .overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    /* Modern Hero Section */
-    .hero-section {
-        position: relative;
-        height: 100vh;
-        overflow: hidden;
-        background: linear-gradient(135deg, rgba(30, 42, 56, 0.8), rgba(13, 110, 253, 0.7));
-    }
-
-    .hero-carousel .item {
-        position: relative;
-        height: 100vh;
-    }
-
-    .hero-bg {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .hero-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: white;
-        width: 80%;
-        max-width: 900px;
-    }
-
-    .hero-content h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        margin-bottom: 1.5rem;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-    }
-
-    .btn-modern {
-        padding: 12px 30px;
-        border-radius: 30px;
-        font-weight: 600;
-        transition: var(--transition);
-        border: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        cursor: pointer;
-        text-decoration: none;
-    }
-
-    .btn-primary-modern {
-        background: var(--gradient);
-        color: white;
-        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
-    }
-
-    .btn-primary-modern:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(13, 110, 253, 0.5);
-        color: white;
-        text-decoration: none;
-    }
-
-    .btn-outline-modern {
-        background: transparent;
-        color: white;
-        border: 2px solid white;
-    }
-
-    .btn-outline-modern:hover {
-        background: white;
-        color: var(--primary);
-        text-decoration: none;
-    }
-
-    .btn-outline-primary-dark {
-        background: transparent;
-        color: var(--dark);
-        border: 2px solid var(--dark);
-    }
-    .btn-outline-primary-dark:hover {
-        background: var(--dark);
-        color: white;
-        text-decoration: none;
-    }
 
     /* ** NEW SERVICES MODAL **
     This CSS now styles the dropdown as a full-screen modal
@@ -776,11 +463,11 @@
 
 <body>
 <?php include_once('header.php') ?>
-    <section class="hero-section" data-aos="fade-up">
-        <div class="owl-carousel owl-theme hero-carousel">
-            <div class="item">
-                <img src="./images/leasing.jpg" alt="Security and Logistics" class="hero-bg">
-                <div class="hero-content">
+    <section class="hero-section m-auto" data-aos="fade-up">
+        <div class="owl-carousel owl-theme hero-carousel m-auto">
+            <div class="item m-auto">
+                <img src="./images/security-hero.png" alt="Security and Logistics" class="hero-bg">
+                <div class="hero-content  m-auto text-center">
                     <h1 class="display-3 fw-bold mb-2">Onshore/Offshore Security Services</h1>
                     <!-- note to change -->
                     <p class="lead mb-2">Professional Security Services, Leasing solutions, Marine Equipment & Logistics, and Engineering expertise to support your operations.</p>
@@ -792,7 +479,7 @@
             </div>
             <div class="item">
                 <img src="./images/engineering-service.jpg" alt="Engineering Site" class="hero-bg">
-                <div class="hero-content">
+                <div class="hero-content  m-auto text-center">
                     <h1 class="display-3 fw-bold mb-2">Engineering & Procurement</h1>
                     <p class="lead mb-2">We combine engineering precision with procurement and consultancy to deliver end-to-end solutions.</p>
                     <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -802,8 +489,19 @@
                 </div>
             </div>
             <div class="item">
+                <img src="./images/marine-equipment-2.jpg" alt="Marine Equipment" class="hero-bg">
+                <div class="hero-content  m-auto text-center">
+                    <h1 class="display-3 fw-bold mb-2">Marine Equipment & Logistics</h1>
+                    <p class="lead mb-2">Supply and logistics for marine operations including equipment hire</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="about.html" class="btn-modern btn-primary-modern">About Us</a>
+                        <a href="projects.html" class="btn-modern btn-outline-modern">Our Projects</a>
+                    </div>
+                </div>
+            </div>            
+            <div class="item">
                 <img src="./images/clearing.jpg" alt="Cargo and Forwarding" class="hero-bg">
-                <div class="hero-content">
+                <div class="hero-content  m-auto text-center">
                     <h1 class="display-3 fw-bold mb-2">Clearing & Forwarding</h1>
                     <p class="lead mb-2">Trusted clearing, forwarding and logistics services to move your cargo safely and efficiently.</p>
                     <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -943,26 +641,6 @@
             justify-content: space-between;
             transform: translateY(-50%);
             padding: 0 15px;
-        }
-
-        .owl-prev,
-        .owl-next {
-            width: 50px;
-            height: 50px;
-            background-color: var(--yellow-primary) !important;
-            border-radius: 50% !important;
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem !important;
-            color: #111 !important;
-            transition: all 0.3s ease;
-        }
-
-        .owl-prev:hover,
-        .owl-next:hover {
-            background-color: white !important;
-            transform: scale(1.1);
         }
 
         .owl-dots {

@@ -1,5 +1,5 @@
 
-    <header id="main-header">
+    <header id="main-header" style="padding-left: 10vw;padding-right: 10vw;">
         <a href="index.php" class="logo">
             <i class="fas fa-drafting-compass logo-icon"></i>
             <div class="logo-text">Ikechi<span>Global</span></div>
@@ -7,13 +7,13 @@
 
         <nav class="nav-links">
             <ul>
-                <li><a href="index.php" class="active"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="about.php"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="index.php" class="">Home</a></li>
+                <li><a href="about.php">About</a></li>
                 <li>
-                    <a href="#" class="services-link"><i class="fas fa-cogs"></i> Services</a>
+                    <a href="#" class="services-link">Services</a>
                 </li>
-                <li><a href="projects.php"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                <li><a href="contact-us.php"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="projects.php">Projects</a></li>
+                <li><a href="contact-us.php">Contact</a></li>
             </ul>
         </nav>
 
@@ -34,13 +34,13 @@
 
         <nav class="modal-nav">
             <ul>
-                <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="about.php"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
                 <li>
-                    <a href="#" class="services-link-mobile"><i class="fas fa-cogs"></i> Services</a>
+                    <a href="#" class="services-link-mobile">Services</a>
                 </li>
-                <li><a href="projects.php"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                <li><a href="contact-us.php"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="projects.php">Projects</a></li>
+                <li><a href="contact-us.php">Contact</a></li>
             </ul>
         </nav>
 
@@ -105,7 +105,7 @@
     </div>
 
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css?11">
     <!-- AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
