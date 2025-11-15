@@ -6,12 +6,16 @@
   },
   "routes": [
     {
-      "src": "/(.*)\\.(jpg|jpeg|png|gif|webp|svg|css|js|ico|txt|pdf)$",
+      "src": "/(.*)\\.(css|js|ico|jpg|jpeg|png|gif|webp|svg|pdf|txt)$",
       "handle": "filesystem"
     },
     {
-      "src": "/(.*)",
+      "src": "/",
       "dest": "/api/index.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/$1.php"
     }
   ]
 }
