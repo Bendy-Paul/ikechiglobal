@@ -1,5 +1,11 @@
 
-    <header id="main-header" style="padding-left: 10vw;padding-right: 10vw;">
+    <link rel="stylesheet" href="./css/styles.css?3">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+
+    
+    <header id="main-header" style="padding-left: 10vw;padding-right: 10vw; z-index:5000">
         <a href="index.php" class="logo">
             <i class="fas fa-drafting-compass logo-icon"></i>
             <div class="logo-text">Ikechi<span>Global</span></div>
@@ -26,7 +32,7 @@
 
     
     <div class="mobile-nav-panel">
-        <button class="close-btn">&times;</button>
+        <button class="close-btn"></button>
         <div class="modal-logo">
             <i class="fas fa-drafting-compass logo-icon"></i>
             <div class="logo-text">Ikechi<span>Global</span></div>
@@ -52,62 +58,67 @@
     <div class="overlay"></div>
 
 
-    <div class="services-dropdown">
+    <div class="services-dropdown mt-4">
         <button class="dropdown-close">&times;</button>
-        <div class="services-header">
-            <h2>Our Services</h2>
-            <p>Comprehensive solutions tailored to meet your business needs across multiple industries</p>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="services-header">
+                    <h2>Our Services</h2>
+                    <p>Comprehensive solutions tailored to meet your business needs across multiple industries</p>
+                </div>
+            </div>
+
+            <div class="col-lg-8">                
+                <div class="services-grid row">
+                    <a href="security-services.php" class="service-item-link col-md-6 mb-4">
+                        <div class="service-item">
+                            <i class="fas fa-shield-alt service-icon"></i>
+                            <h3>Onshore & Offshore Security Services</h3>
+                            <p>Professional security solutions including static guards, mobile patrols and site protection.</p>
+                        </div>
+                    </a>
+                    <a href="leasing-services.php" class="service-item-link col-md-6 mb-4">
+                        <div class="service-item">
+                            <i class="fas fa-handshake service-icon"></i>
+                            <h3>Leasing Services</h3>
+                            <p>Flexible leasing solutions for equipment and manpower.</p>
+                        </div>
+                    </a>
+                    <a href="marine-logistics.php" class="service-item-link col-md-6 mb-4">
+                        <div class="service-item">
+                            <i class="fas fa-ship service-icon"></i>
+                            <h3>Marine Equipment & Logistics</h3>
+                            <p>Supply and logistics for marine operations including equipment hire.</p>
+                        </div>
+                    </a>
+                    <a href="engineering-services.php" class="service-item-link col-md-6 mb-4">
+                        <div class="service-item">
+                            <i class="fas fa-cogs service-icon"></i>
+                            <h3>Engineering Services</h3>
+                            <p>Multidisciplinary engineering support — design, analysis and commissioning.</p>
+                        </div>
+                    </a>
+                    <a href="procurement-consultancy.php" class="service-item-link col-md-6 mb-4">
+                        <div class="service-item">
+                            <i class="fas fa-clipboard-list service-icon"></i>
+                            <h3>Procurement & Consultancy</h3>
+                            <p>End-to-end procurement and specialist consultancy services.</p>
+                        </div>
+                    </a>
+                    <a href="clearing-forwarding.php" class="service-item-link col-md-6 mb-4">
+                        <div class="service-item">
+                            <i class="fas fa-truck service-icon"></i>
+                            <h3>Clearing & Forwarding</h3>
+                            <p>Reliable clearing, forwarding and freight services for cross-border trade.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="services-grid">
-            <a href="security-services.php" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-shield-alt service-icon"></i>
-                    <h3>Onshore & Offshore Security Services</h3>
-                    <p>Professional security solutions including static guards, mobile patrols and site protection.</p>
-                </div>
-            </a>
-            <a href="leasing-services.php" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-handshake service-icon"></i>
-                    <h3>Leasing Services</h3>
-                    <p>Flexible leasing solutions for equipment and manpower.</p>
-                </div>
-            </a>
-            <a href="marine-logistics.php" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-ship service-icon"></i>
-                    <h3>Marine Equipment & Logistics</h3>
-                    <p>Supply and logistics for marine operations including equipment hire.</p>
-                </div>
-            </a>
-            <a href="engineering-services.php" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-cogs service-icon"></i>
-                    <h3>Engineering Services</h3>
-                    <p>Multidisciplinary engineering support — design, analysis and commissioning.</p>
-                </div>
-            </a>
-            <a href="procurement-consultancy.php" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-clipboard-list service-icon"></i>
-                    <h3>Procurement & Consultancy</h3>
-                    <p>End-to-end procurement and specialist consultancy services.</p>
-                </div>
-            </a>
-            <a href="clearing-forwarding.php" class="service-item-link">
-                <div class="service-item">
-                    <i class="fas fa-truck service-icon"></i>
-                    <h3>Clearing & Forwarding</h3>
-                    <p>Reliable clearing, forwarding and freight services for cross-border trade.</p>
-                </div>
-            </a>
-        </div>
+
     </div>
 
-
-    <link rel="stylesheet" href="./css/styles.css?11">
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
 
 

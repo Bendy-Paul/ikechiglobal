@@ -14,179 +14,6 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 <style>
-    :root {
-        --primary: #f6b61b;
-        --secondary: #0d6efd;
-        --dark: #1e2a38;
-        --light: #f8f9fa;
-        --accent: #20c997;
-        --text-dark: #333;
-        --text-light: #6c757d;
-        --gradient: linear-gradient(135deg, var(--primary), #0a58ca);
-        --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        --transition: all 0.3s ease;
-        a{
-            text-decoration: none;
-        }
-    }
-
-
-    .section-title {
-        position: relative;
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 3rem;
-        text-align: center;
-    }
-
-    .section-title:after {
-        content: '';
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: var(--gradient);
-        border-radius: 2px;
-    }
-
-
-    /* ** NEW SERVICES MODAL **
-    This CSS now styles the dropdown as a full-screen modal
-    for ALL screen sizes.
-    */
-    .services-dropdown {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: white;
-        box-shadow: var(--shadow);
-        z-index: 2010; /* Higher than mobile nav */
-        padding: 3rem 2rem;
-        border-radius: 0;
-        overflow-y: auto;
-
-        /* Hide by default */
-        display: none;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .services-dropdown.active {
-        display: block;
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .service-item {
-        padding: 2rem;
-        border-radius: 15px;
-        background: white;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .service-item:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 5px;
-        height: 100%;
-        background: var(--gradient);
-        transition: var(--transition);
-    }
-
-    .service-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .service-item:hover:before {
-        width: 100%;
-        opacity: 0.05;
-    }
-
-    .service-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: var(--primary);
-        z-index: 1;
-    }
-
-    .service-item h3 {
-        color: var(--dark);
-        margin-bottom: 1rem;
-        font-size: 1.3rem;
-        z-index: 1;
-    }
-
-    .service-item p {
-        color: var(--text-light);
-        font-size: 0.95rem;
-        z-index: 1;
-    }
-
-    .dropdown-close {
-        /* Position fixed so it stays in view on scroll */
-        position: fixed;
-        top: 1.5rem;
-        right: 1.5rem;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--text-light);
-        transition: var(--transition);
-        z-index: 2011; /* Above the dropdown */
-    }
-
-    .dropdown-close:hover {
-        color: var(--primary);
-        transform: rotate(90deg);
-    }
-
-    .services-header {
-        text-align: center;
-        margin-bottom: 3rem;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 3rem; /* Add padding to account for fixed close btn */
-    }
-
-    .services-header h2 {
-        color: var(--dark);
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .services-header p {
-        color: var(--text-light);
-        font-size: 1.1rem;
-    }
-    
-    /* End of New Services Modal Styles */
-
-
     /* Modern Cards */
     .modern-card {
         background: white;
@@ -478,8 +305,8 @@
                 </div>
             </div>
             <div class="item">
-                <img src="./images/engineering-service.jpg" alt="Engineering Site" class="hero-bg">
-                <div class="hero-content  m-auto text-center">
+                <img src="./images/portfolio/construction-9.jpg" alt="Engineering Site" class="hero-bg">
+                <div class="hero-content m-auto text-center" data-aos="fade-in">
                     <h1 class="display-3 fw-bold mb-2">Engineering & Procurement</h1>
                     <p class="lead mb-2">We combine engineering precision with procurement and consultancy to deliver end-to-end solutions.</p>
                     <div class="d-flex gap-3 justify-content-center flex-wrap">
@@ -555,8 +382,7 @@
                         <li>
                             <h5 class="mb-1">Our Expertise</h5>
                             <span>
-                                Our team of highly skilled professionals combines technical expertise with creative problem-solving to tackle even the most complex construction challenges. With decades of combined experience across civil, mechanical, electrical, and marine disciplines, we deliver turnkey solutions from concept and design through procurement, construction, and commissioning. We maintain rigorous safety and quality management systems, hold industry-recognized certifications, and employ sustainable practices to minimize environmental impact.
-                            </span>
+                                We deliver integrated marine and industrial solutions by combining deep technical expertise with a comprehensive suite of services. Our team of seasoned professionals provides a single point of accountability for your most complex operational challenges. From Engineering, Procurement, and Consultancy to Marine Equipment Leasing, Logistics, and Clearing & Forwarding, we ensure seamless project execution. Furthermore, we secure your assets and operations with professional Onshore & Offshore Security Services. Across all disciplines, we are committed to the highest standards of safety, quality, and sustainability.                            </span>
                         </li>
                     </ul>
 
@@ -724,7 +550,7 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="modern-card">
-                        <img src="./images/security.jpg" class="modern-card-img" alt="Security Services">
+                        <img src="./images/services/security-2.jpg" class="modern-card-img" alt="Security Services">
                         <div class="modern-card-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
@@ -738,7 +564,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="modern-card">
-                        <img src="./images/leasing-2.jpg" class="modern-card-img" alt="Leasing Services">
+                        <img src="./images/security.jpg" class="modern-card-img" alt="Leasing Services">
                         <div class="modern-card-icon">
                             <i class="fas fa-handshake"></i>
                         </div>
@@ -766,7 +592,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="modern-card">
-                        <img src="./images/engineering-service.jpg" class="modern-card-img" alt="Engineering Services">
+                        <img src="./images/portfolio/construction-6.jpg" class="modern-card-img" alt="Engineering Services">
                         <div class="modern-card-icon">
                             <i class="fas fa-cogs"></i>
                         </div>
@@ -780,7 +606,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="modern-card">
-                        <img src="./images/procurement-2.jpg" class="modern-card-img" alt="Procurement & Consultancy">
+                        <img src="./images/services/procurement-3.jpg" class="modern-card-img" alt="Procurement & Consultancy">
                         <div class="modern-card-icon">
                             <i class="fas fa-shopping-cart"></i>
                         </div>
@@ -844,224 +670,10 @@
         </div>
     </section>
 
-    <footer class="footer fade-in-section" data-aos="fade-up">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <h3 class="text-white mb-4"><span class="text-primary">Ikechi</span>Global</h3>
-                    <p>Leading the way in innovative construction and engineering solutions since 1995. We build with integrity, quality, and a commitment to excellence.</p>
-                    <div class="mt-4">
-                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <h4 class="text-white mb-4">Quick Links</h4>
-                    <ul class="list-unstyled footer-links">
-                        <li class="mb-2"><a href="#">Home</a></li>
-                        <li class="mb-2"><a href="#about">About Us</a></li>
-                        <li class="mb-2"><a href="#services">Services</a></li>
-                        <li class="mb-2"><a href="#projects">Projects</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <h4 class="text-white mb-4">Services</h4>
-                    <ul class="list-unstyled footer-links">
-                        <li class="mb-2"><a href="#">Security Services</a></li>
-                        <li class="mb-2"><a href="#">Leasing Services</a></li>
-                        <li class="mb-2"><a href="#">Marine Logistics</a></li>
-                        <li class="mb-2"><a href="#">Engineering</a></li>
-                        <li class="mb-2"><a href="#">Procurement</a></li>
-                        <li class="mb-2"><a href="#">Clearing & Forwarding</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-4" id="contact">
-                    <h4 class="text-white mb-4">Contact Us</h4>
-                    <ul class="list-unstyled footer-links">
-                        <li class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-warning"></i> 123 Construction Ave, Building City, BC 12345</li>
-                        <li class="mb-3"><i class="bi bi-telephone-fill me-2 text-warning"></i> (123) 456-7890</li>
-                        <li class="mb-3"><i class="bi bi-envelope-fill me-2 text-warning"></i> info@ikechiglobalservices.com</li>
-                        <li class="mb-3"><i class="bi bi-clock-fill me-2 text-warning"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="mt-5 mb-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2023 Ikechi Global Services. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed with <i class="bi bi-heart-fill text-danger"></i> by Ikechi Global Team</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="./js/script.js"></script>
-    <script>
-        // *** NEW SIMPLIFIED SCRIPT ***
-
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // Mobile menu functionality
-            const hamburger = document.querySelector('.hamburger');
-            const mobileNavPanel = document.querySelector('.mobile-nav-panel');
-            const overlay = document.querySelector('.overlay');
-            const mobileNavCloseBtn = document.querySelector('.mobile-nav-panel .close-btn');
-
-            function openMobileMenu() {
-                hamburger.classList.add('active');
-                mobileNavPanel.classList.add('active');
-                overlay.classList.add('active');
-                document.body.classList.add('modal-open');
-            }
-
-            function closeMobileMenu() {
-                hamburger.classList.remove('active');
-                mobileNavPanel.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.classList.remove('modal-open');
-            }
-
-            hamburger.addEventListener('click', openMobileMenu);
-            mobileNavCloseBtn.addEventListener('click', closeMobileMenu);
-            overlay.addEventListener('click', closeMobileMenu);
-
-
-            // *** NEW UNIFIED SERVICES MODAL SCRIPT ***
-            const servicesDropdown = document.querySelector('.services-dropdown');
-            const servicesModalCloseBtn = document.querySelector('.services-dropdown .dropdown-close');
-            // Get ALL links that should open the services modal
-            const servicesOpenLinks = document.querySelectorAll('.services-link, .services-link-mobile');
-
-            function openServicesModal(e) {
-                e.preventDefault();
-                // Close mobile nav if it's open
-                if (mobileNavPanel.classList.contains('active')) {
-                    closeMobileMenu();
-                }
-                servicesDropdown.classList.add('active');
-                document.body.classList.add('modal-open');
-            }
-
-            function closeServicesModal() {
-                servicesDropdown.classList.remove('active');
-                document.body.classList.remove('modal-open');
-            }
-
-            // Attach listener to all "Services" links
-            servicesOpenLinks.forEach(link => {
-                link.addEventListener('click', openServicesModal);
-            });
-
-            // Attach listener to the close button
-            servicesModalCloseBtn.addEventListener('click', closeServicesModal);
-
-
-            // Header scroll effect
-            window.addEventListener('scroll', () => {
-                const header = document.getElementById('main-header');
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // Stats counter animation
-            function animateStats(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counters = document.querySelectorAll('.stats-number');
-                        const speed = 200; // Duration of the animation
-
-                        counters.forEach(counter => {
-                            const target = +counter.getAttribute('data-target');
-                            const suffix = counter.innerText.replace(/[0-9]/g, '');
-
-                            const updateCount = () => {
-                                const countText = counter.innerText.replace(/[^0-9]/g, '');
-                                const count = +countText;
-                                const increment = target / speed;
-
-                                if (count < target) {
-                                    let newCount = Math.ceil(count + increment);
-                                    if (newCount > target) newCount = target;
-                                    counter.innerText = newCount + suffix;
-                                    requestAnimationFrame(updateCount);
-                                } else {
-                                    counter.innerText = target + suffix;
-                                }
-                            };
-                            updateCount();
-                        });
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }
-
-            // Initialize stats animation when in viewport
-            const statsSection = document.querySelector('.stats-section');
-            if (statsSection) {
-                const statsObserver = new IntersectionObserver(animateStats, { threshold: 0.5 });
-                statsObserver.observe(statsSection);
-            }
-
-            // Fade-in sections on scroll
-            const fadeInObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        fadeInObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in-section').forEach(section => {
-                fadeInObserver.observe(section);
-            });
-
-
-            // Initialize Owl Carousel (requires jQuery)
-            if (window.jQuery) {
-                $(".hero-carousel").owlCarousel({
-                    items: 1,
-                    loop: true,
-                    autoplay: true,
-                    autoplayTimeout: 5000,
-                    autoplayHoverPause: true,
-                    nav: true,
-                    dots: true,
-                    animateOut: 'fadeOut',
-                    animateIn: 'fadeIn',
-                    smartSpeed: 1000,
-                    navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
-                });
-
-                $(".client-carousel").owlCarousel({
-                    loop: true,
-                    autoplay: true,
-                    autoplayTimeout: 3000,
-                    autoplayHoverPause: true,
-                    margin: 30,
-                    dots: false,
-                    responsive:{
-                        0:{ items:2 },
-                        600:{ items:3 },
-                        1000:{ items:5 }
-                    }
-                });
-            } else {
-                console.warn("jQuery not loaded, Owl Carousel will not work.");
-            }
-
-        });
-    </script>
+<?php
+include_once('footer.php')
+?>
 </body>
 
 </html>

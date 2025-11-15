@@ -18,495 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <style>
-        :root {
-            --primary: #f6b61b;
-            --secondary: #0d6efd;
-            --dark: #1e2a38;
-            --light: #f8f9fa;
-            --accent: #20c997;
-            --text-dark: #333;
-            --text-light: #6c757d;
-            --gradient: linear-gradient(135deg, var(--primary), #0a58ca);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-
-        a{
-            text-decoration: none;
-        }
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        /* Prevent scrolling when modal is open */
-        body.modal-open {
-            overflow: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        /* Modern Header Styles */
-        #main-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-        }
-
-        #main-header.scrolled {
-            padding: 10px 5%;
-            background: rgba(255, 255, 255, 0.98);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark);
-            z-index: 1001;
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            margin-right: 10px;
-            color: var(--primary);
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-links ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li {
-            margin: 0 10px;
-            position: relative;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            position: relative;
-            padding: 8px 15px;
-            border-radius: 30px;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-            background: rgba(13, 110, 253, 0.05);
-        }
-
-        .nav-links a.active {
-            color: var(--primary);
-            background: rgba(13, 110, 253, 0.1);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            width: 30px;
-            height: 30px;
-            justify-content: center;
-            align-items: center;
-            z-index: 1001;
-        }
-
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 3px 0;
-            background: var(--dark);
-            transition: var(--transition);
-            border-radius: 2px;
-        }
-
-        .hamburger.active .bar:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active .bar:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        /* Mobile Menu Styles */
-        .mobile-nav-panel {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 300px;
-            height: 100vh;
-            background: white;
-            z-index: 2000;
-            padding: 80px 30px 30px;
-            transition: var(--transition);
-            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-            overflow-y: auto;
-        }
-
-        .mobile-nav-panel.active {
-            right: 0;
-        }
-
-        .modal-logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 30px;
-        }
-
-        .modal-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .modal-nav li {
-            margin-bottom: 15px;
-        }
-
-        .modal-nav a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            padding: 10px 15px;
-            border-radius: 30px;
-            display: block;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .modal-nav a:hover {
-            color: var(--primary);
-            background: rgba(13, 110, 253, 0.05);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark);
-            transition: var(--transition);
-        }
-
-        .close-btn:hover {
-            color: var(--primary);
-            transform: rotate(90deg);
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1999;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* ** NEW SERVICES MODAL **
-        This CSS styles the dropdown as a full-screen modal
-        for ALL screen sizes.
-        */
-        .services-dropdown {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: white;
-            box-shadow: var(--shadow);
-            z-index: 2010; /* Higher than mobile nav */
-            padding: 3rem 2rem;
-            border-radius: 0;
-            overflow-y: auto;
-
-            /* Hide by default */
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .services-dropdown.active {
-            display: block;
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-item {
-            padding: 2rem;
-            border-radius: 15px;
-            background: white;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-item:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--gradient);
-            transition: var(--transition);
-        }
-
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-item:hover:before {
-            width: 100%;
-            opacity: 0.05;
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-            z-index: 1;
-        }
-
-        .service-item h3 {
-            color: var(--dark);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            z-index: 1;
-        }
-
-        .service-item p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            z-index: 1;
-        }
-
-        .dropdown-close {
-            /* Position fixed so it stays in view on scroll */
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-light);
-            transition: var(--transition);
-            z-index: 2011; /* Above the dropdown */
-        }
-
-        .dropdown-close:hover {
-            color: var(--primary);
-            transform: rotate(90deg);
-        }
-
-        .services-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 3rem; /* Add padding to account for fixed close btn */
-        }
-
-        .services-header h2 {
-            color: var(--dark);
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .services-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-        
-        /* End of New Services Modal Styles */
-
-        /* Footer */
-        .footer {
-            background: var(--dark);
-            color: white;
-            padding: 80px 0 20px;
-        }
-
-        .footer h4 {
-            position: relative;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-
-        .footer h4:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--primary);
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* --- STYLES FROM ABOUT PAGE --- */
-
-        .hero-section {
-            background-color: #102149;
-            color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-            margin-top: 70px; /* Account for fixed header */
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(28, 36, 54, 0.8) 0%, rgba(41, 98, 255, 0.4) 100%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-weight: 700;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-subtitle {
-            font-weight: 300;
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        .hero-image {
-            position: relative;
-            z-index: 2;
-            border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
 
         /* Stats Section */
         .stats-number {
@@ -514,7 +26,7 @@
             font-weight: 700;
             color: var(--dark);
         }
-        
+
         .stat-divider {
             border-right: 2px solid #212529;
         }
@@ -523,9 +35,11 @@
         .mission {
             background-size: cover;
         }
+
         .about-img {
             border-radius: 10px;
         }
+
         .tag {
             font-weight: 500;
             color: var(--primary);
@@ -586,7 +100,7 @@
             min-height: 400px;
             padding: 2rem 1rem;
         }
-        
+
         .why-choose-us-content {
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
@@ -596,20 +110,21 @@
 
         /* Core Values Section */
         .core-values-section {
-             background: 
+            background:
                 linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
                 url('./wireframe-4.jpg') top/cover;
         }
-        
+
         .icon-wrapper-lg {
-            width: 80px; 
-            height: 80px; 
+            width: 80px;
+            height: 80px;
             line-height: 80px;
         }
 
         .hover-shadow:hover {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
         }
+
         .transition-all {
             transition: all 0.3s ease;
         }
@@ -617,18 +132,7 @@
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            .nav-links {
-                display: none;
-            }
 
-            .hamburger {
-                display: flex;
-            }
-            
-            .hero-subtitle {
-                font-size: 2.5rem;
-            }
-            
             .stat-divider {
                 border-right: none;
                 border-bottom: 2px solid #dee2e6;
@@ -642,43 +146,24 @@
                 margin-bottom: 0;
             }
         }
-
-        @media (max-width: 768px) {
-            .hero-subtitle {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .mobile-nav-panel {
-                width: 280px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .mobile-nav-panel {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 
 <body>
-<?php include_once('header.php')?>
-
-
-    <section data-aos="fade-up" class="hero-section">
+    <?php include_once('header.php') ?>
+    <!-- Modern Hero Section -->
+    <section data-aos="fade-up" class="modern-hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <p class="hero-title">About Us</p>
-                    <h1 class="hero-subtitle">We are a leading provider of Security, Leasing & Logistics</h1>
-
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="hero-content">
+                        <span class="hero-badge">Our Company</span>
+                        <h1 class="hero-title">About Us</h1>
+                        <p class="hero-subtitle">We are a multidisciplinary team that delivers end-to-end solutions for the marine and industrial sectors. Our integrated services include Engineering, Procurement & Consultancy, Marine Equipment Leasing & Logistics, and Onshore & Offshore Security, all supported by expert Clearing & Forwarding. </p>
+                    </div>
                 </div>
-                <div class="col-lg-6 d-none d-lg-block">
-                    <img src="./crane.webp" alt="Engineering Team" class="img-fluid hero-image">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <img src="./images/portfolio/construction-10.jpg" alt="Engineering Team" class="img-fluid hero-image rounded-4" style="height: 24rem;">
                 </div>
             </div>
         </div>
@@ -688,7 +173,7 @@
         <div class="row container m-auto fade-in">
             <div class="col-lg-6 p-4">
                 <div class="about-img">
-                    <img src="./contruction.jpg" alt="About Us" class="img-fluid about-img shadow-lg">
+                    <img src="./images/about-us-1.jpg" alt="About Us" class="img-fluid about-img shadow-lg">
                 </div>
             </div>
             <div class="col-lg-6">
@@ -698,9 +183,7 @@
                         <h2 class="margin-top-seventeen padding-bottom-six">Delivering Security, Leasing and Logistics
                             Excellence</h2>
                     </div>
-                    <p class="padding-bottom-seventeen">At Ikechi Global Services, we deliver reliable security
-                        solutions, leasing services, marine equipment & logistics, engineering, procurement and
-                        consultancy.
+                    <p class="padding-bottom-seventeen">Our team of highly skilled professionals combines technical expertise with creative problem-solving to deliver integrated solutions across a diverse service portfolio. With decades of combined experience, we provide end-to-end support in Onshore & Offshore Security, Marine Equipment Leasing, and specialized Logistics. Our capabilities extend from expert Engineering Services and Procurement & Consultancy to efficient Clearing & Forwarding.
                     <div class="about-progress-wrapper m-4">
                         <div class="about-progress-text-wrapper">
                             <div class="home-three-experience-title-block">Safety</div>
@@ -735,49 +218,67 @@
             </div>
         </div>
     </section>
+    <section data-aos="fade-up" class="py-5 fade-in-section bg-light">
+        <div class="container py-lg-4">
+            <div class="text-center mb-5">
+                <h2 class="mb-3">Our Core Values</h2>
+                
+                
+                <p class="mb-0">The foundation of everything we do</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-3 fade-in-section">
+                        <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
+                            <div class="icon-wrapper-lg bg-warning bg-opacity-10 text-warning rounded-circle mx-auto mb-4">
+                                <i class="bi bi-shield-check fs-3"></i>
+                            </div>
+                            <h4 class="mb-3">Safety First</h4>
+                            <p class="text-muted mb-0">Uncompromising commitment to workplace safety</p>
+                        </div>
+                    </div>
     
+                    <div class="col-md-6 col-lg-3 fade-in-section">
+                        <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
+                            <div class="icon-wrapper-lg bg-success bg-opacity-10 text-success rounded-circle mx-auto mb-4">
+                                <i class="bi bi-tree fs-3"></i>
+                            </div>
+                            <h4 class="mb-3">Sustainability</h4>
+                            <p class="text-muted mb-0">Eco-friendly and compliant operational practices</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 col-lg-3 fade-in-section">
+                        <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
+                            <div class="icon-wrapper-lg bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-4">
+                                <i class="bi bi-people fs-3"></i>
+                            </div>
+                            <h4 class="mb-3">Teamwork</h4>
+                            <p class="text-muted mb-0">Collaborative approach to excellence</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 col-lg-3 fade-in-section">
+                        <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
+                            <div class="icon-wrapper-lg bg-info bg-opacity-10 text-info rounded-circle mx-auto mb-4">
+                                <i class="bi bi-lightbulb fs-3"></i>
+                            </div>
+                            <h4 class="mb-3">Innovation</h4>
+                            <p class="text-muted mb-0">Pioneering smart logistics and engineering solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     <section data-aos="fade-up" class="p-0 py-md-4 fade-in-section why-choose-us-section">
         <div class="row g-0">
             <div class="col-12">
-                <div class="content p-3 p-md-4 p-lg-5 col-12 col-md-10 col-lg-9 mx-auto ms-lg-auto me-lg-4 why-choose-us-content">
+                <div class="content p-5 mt-4 col-12 col-md-10 col-lg-6 why-choose-us-content m-auto text-white text-center">
                     <div class="row g-4 g-lg-5">
                         <div class="col-lg-12">
                             <h2 class="mb-3 mb-md-4">Why Choose Us?</h2>
                             <p class="mb-4">We are committed to delivering exceptional security, logistics and
                                 engineering services with a focus on quality, compliance and client success.</p>
-
-                            <div class="row g-3 mb-4">
-                                <div class="col-md-4">
-                                    <div class="d-flex align-items-start">
-                                        <div class="me-3 text-primary fs-3"><i class="bi bi-shield-check"></i></div>
-                                        <div>
-                                            <h5 class="mb-1">Integrated Security</h5>
-                                            <p class="mb-0 text-muted">Trained personnel and modern systems to protect your people and assets.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="d-flex align-items-start">
-                                        <div class="me-3 text-success fs-3"><i class="bi bi-truck"></i></div>
-                                        <div>
-                                            <h5 class="mb-1">Reliable Logistics</h5>
-                                            <p class="mb-0 text-muted">End-to-end supply chain and marine logistics tailored to your requirements.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="d-flex align-items-start">
-                                        <div class="me-3 text-warning fs-3"><i class="bi bi-gear"></i></div>
-                                        <div>
-                                            <h5 class="mb-1">Engineering & Leasing</h5>
-                                            <p class="mb-0 text-muted">Equipment leasing and technical expertise to move projects forward efficiently.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -785,23 +286,13 @@
         </div>
     </section>
 
-    <section data-aos="fade-up" class="py-5 fade-in-section bg-light">
+    <section data-aos="fade-up" class="py-5 fade-in-section bg-light core-values-section">
         <div class="container py-lg-4">
-            <div class="text-center mb-5">
+            <!-- <div class="text-center mb-5">
                 <h2 class="mb-3">Why Choose Us</h2>
                 <p class="mb-0">What sets us apart</p>
-            </div>
+            </div> -->
             <div class="row g-4 justify-content-center">
-                <div class="col-12 col-md-6 col-lg-3 fade-in-section">
-                    <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
-                        <div class="icon-wrapper-lg bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-4">
-                            <i class="bi bi-person-badge fs-3"></i>
-                        </div>
-                        <h4 class="mb-3">Experienced Team</h4>
-                        <p class="text-muted mb-0">Experienced professionals with over 20 years in the industry.</p>
-                    </div>
-                </div>
-
                 <div class="col-12 col-md-6 col-lg-3 fade-in-section">
                     <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
                         <div class="icon-wrapper-lg bg-success bg-opacity-10 text-success rounded-circle mx-auto mb-4">
@@ -814,290 +305,41 @@
 
                 <div class="col-12 col-md-6 col-lg-3 fade-in-section">
                     <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
-                        <div class="icon-wrapper-lg bg-warning bg-opacity-10 text-warning rounded-circle mx-auto mb-4">
+                        <div class="icon-wrapper-lg bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-4">
                             <i class="bi bi-shield-check fs-3"></i>
                         </div>
-                        <h4 class="mb-3">Safety & Environment</h4>
-                        <p class="text-muted mb-0">Commitment to safety and environmental standards across all operations.</p>
+                        <h4 class="mb-3">Integrated Security</h4>
+                        <p class="text-muted mb-0">Trained personnel and modern systems to protect your people and assets.</p>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-3 fade-in-section">
                     <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
                         <div class="icon-wrapper-lg bg-info bg-opacity-10 text-info rounded-circle mx-auto mb-4">
-                            <i class="bi bi-people fs-3"></i>
+                            <i class="bi bi-truck fs-3"></i>
                         </div>
-                        <h4 class="mb-3">Customer-Centric</h4>
-                        <p class="text-muted mb-0">Customer-centric approach with tailored solutions to meet your needs.</p>
+                        <h4 class="mb-3">Reliable Logistics</h4>
+                        <p class="text-muted mb-0">End-to-end supply chain and marine logistics tailored to your requirements.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section data-aos="fade-up" class="py-5 fade-in-section core-values-section">
-        <div class="container py-lg-4">
-            <div class="text-center mb-5">
-                <h2 class="mb-3">Our Core Values</h2>
-                <p class="mb-0">The foundation of everything we do</p>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-3 fade-in-section">
+                <div class="col-12 col-md-6 col-lg-3 fade-in-section">
                     <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
                         <div class="icon-wrapper-lg bg-warning bg-opacity-10 text-warning rounded-circle mx-auto mb-4">
-                            <i class="bi bi-shield-check fs-3"></i>
+                            <i class="bi bi-gear fs-3"></i>
                         </div>
-                        <h4 class="mb-3">Safety First</h4>
-                        <p class="text-muted mb-0">Uncompromising commitment to workplace safety</p>
+                        <h4 class="mb-3">Engineering & Leasing</h4>
+                        <p class="text-muted mb-0">Equipment leasing and technical expertise to move projects forward efficiently.</p>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3 fade-in-section">
-                    <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
-                        <div class="icon-wrapper-lg bg-success bg-opacity-10 text-success rounded-circle mx-auto mb-4">
-                            <i class="bi bi-tree fs-3"></i>
-                        </div>
-                        <h4 class="mb-3">Sustainability</h4>
-                        <p class="text-muted mb-0">Eco-friendly and compliant operational practices</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 fade-in-section">
-                    <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
-                        <div class="icon-wrapper-lg bg-primary bg-opacity-10 text-primary rounded-circle mx-auto mb-4">
-                            <i class="bi bi-people fs-3"></i>
-                        </div>
-                        <h4 class="mb-3">Teamwork</h4>
-                        <p class="text-muted mb-0">Collaborative approach to excellence</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 fade-in-section">
-                    <div class="card h-100 border-0 shadow-sm hover-shadow transition-all text-center p-4">
-                        <div class="icon-wrapper-lg bg-info bg-opacity-10 text-info rounded-circle mx-auto mb-4">
-                            <i class="bi bi-lightbulb fs-3"></i>
-                        </div>
-                        <h4 class="mb-3">Innovation</h4>
-                        <p class="text-muted mb-0">Pioneering smart logistics and engineering solutions</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <h3 class="text-white mb-4"><span class="text-primary">Ikechi</span>Global</h3>
-                    <p>Leading the way in security, leasing, logistics and engineering solutions. We operate with
-                        integrity, quality, and a commitment to excellence.</p>
-                    <div class="mt-4">
-                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <h4 class="text-white mb-4">Quick Links</h4>
-                    <ul class="list-unstyled footer-links">
-                        <li class="mb-2"><a href="index.html">Home</a></li>
-                        <li class="mb-2"><a href="about.html">About Us</a></li>
-                        <li class="mb-2"><a href="projects.html">Projects</a></li>
-                        <li class="mb-2"><a href="#" class="services-link">Services</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <h4 class="text-white mb-4">Services</h4>
-                    <ul class="list-unstyled footer-links">
-                        <li class="mb-2"><a href="#" class="services-link">Security Services</a></li>
-                        <li class="mb-2"><a href="#" class="services-link">Leasing Services</a></li>
-                        <li class="mb-2"><a href="#" class="services-link">Marine Logistics</a></li>
-                        <li class="mb-2"><a href="#" class="services-link">Engineering</a></li>
-                        <li class="mb-2"><a href="#" class="services-link">Procurement</a></li>
-                        <li class="mb-2"><a href="#" class="services-link">Clearing & Forwarding</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-4" id="contact">
-                    <h4 class="text-white mb-4">Contact Us</h4>
-                    <ul class="list-unstyled footer-links">
-                        <li class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-warning"></i> Head Office: Lagos,
-                            Nigeria</li>
-                        <li class="mb-3"><i class="bi bi-telephone-fill me-2 text-warning"></i> (123) 456-7890</li>
-                        <li class="mb-3"><i class="bi bi-envelope-fill me-2 text-warning"></i> info@ikechiglobalservices.com
-                        </li>
-                        <li class="mb-3"><i class="bi bi-clock-fill me-2 text-warning"></i> Mon-Fri: 8:00 AM - 6:00 PM
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="mt-5 mb-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2023 Ikechi Global Services. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed with <i class="bi bi-heart-fill text-danger"></i> by Ikechi Global Team</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-
-        <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // Mobile menu functionality
-            const hamburger = document.querySelector('.hamburger');
-            const mobileNavPanel = document.querySelector('.mobile-nav-panel');
-            const overlay = document.querySelector('.overlay');
-            const mobileNavCloseBtn = document.querySelector('.mobile-nav-panel .close-btn');
-
-            function openMobileMenu() {
-                hamburger.classList.add('active');
-                mobileNavPanel.classList.add('active');
-                overlay.classList.add('active');
-                document.body.classList.add('modal-open');
-            }
-
-            function closeMobileMenu() {
-                hamburger.classList.remove('active');
-                mobileNavPanel.classList.remove('active');
-                overlay.classList.remove('active');
-                // Only remove modal-open if the services modal isn't also open
-                if (!document.querySelector('.services-dropdown.active')) {
-                    document.body.classList.remove('modal-open');
-                }
-            }
-
-            hamburger.addEventListener('click', openMobileMenu);
-            mobileNavCloseBtn.addEventListener('click', closeMobileMenu);
-            overlay.addEventListener('click', closeMobileMenu);
-
-
-            // *** UNIFIED SERVICES MODAL SCRIPT ***
-            const servicesDropdown = document.querySelector('.services-dropdown');
-            const servicesModalCloseBtn = document.querySelector('.services-dropdown .dropdown-close');
-            // Get ALL links that should open the services modal
-            const servicesOpenLinks = document.querySelectorAll('.services-link, .services-link-mobile');
-
-            function openServicesModal(e) {
-                e.preventDefault();
-                // Close mobile nav if it's open
-                if (mobileNavPanel.classList.contains('active')) {
-                    closeMobileMenu();
-                }
-                servicesDropdown.classList.add('active');
-                document.body.classList.add('modal-open');
-            }
-
-            function closeServicesModal() {
-                servicesDropdown.classList.remove('active');
-                // Only remove modal-open if the mobile nav isn't also open
-                if (!mobileNavPanel.classList.contains('active')) {
-                    document.body.classList.remove('modal-open');
-                }
-            }
-
-            // Attach listener to all "Services" links
-            servicesOpenLinks.forEach(link => {
-                link.addEventListener('click', openServicesModal);
-            });
-
-            // Attach listener to the close button
-            servicesModalCloseBtn.addEventListener('click', closeServicesModal);
-
-
-            // Header scroll effect
-            window.addEventListener('scroll', () => {
-                const header = document.getElementById('main-header');
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // Stats counter animation
-            function animateStats(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counters = entry.target.querySelectorAll('.stats-number');
-                        const speed = 100; // Duration of the animation
-
-                        counters.forEach(counter => {
-                            const target = +counter.getAttribute('data-target');
-                            const suffix = counter.innerText.replace(/[0-9]/g, '');
-
-                            const updateCount = (timestamp) => {
-                                const countText = counter.innerText.replace(/[^0-9]/g, '');
-                                const count = +countText;
-                                
-                                // Calculate increment
-                                const increment = (target / speed) * (timestamp - (counter.startTime || timestamp));
-                                counter.startTime = timestamp; // store start time
-
-                                let newCount = Math.floor(count + increment);
-
-                                if (newCount < target) {
-                                    counter.innerText = newCount + suffix;
-                                    requestAnimationFrame(updateCount);
-                                } else {
-                                    counter.innerText = target + suffix;
-                                }
-                            };
-                            requestAnimationFrame(updateCount);
-                        });
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }
-
-            // Initialize stats animation when in viewport
-            const statsSections = document.querySelectorAll('.stats-section');
-            if (statsSections.length > 0) {
-                const statsObserver = new IntersectionObserver(animateStats, { threshold: 0.5 });
-                statsSections.forEach(section => statsObserver.observe(section));
-            }
-
-            // Fade-in sections on scroll
-            const fadeInObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        fadeInObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in-section').forEach(section => {
-                fadeInObserver.observe(section);
-            });
-
-        });
-    </script>
+    <?php
+    include_once('footer.php')
+    ?>
 </body>
 
 </html>
